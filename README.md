@@ -24,9 +24,7 @@ He decidido realizar una aplicacion de eventos para dar solucion a las personas 
 
 ## Descripción de la aplicación
 
-Esta aplicacion, te permitirá 
-
-
+Esta aplicacion, te permitirá controlar los usuarios de la aplicacion movil y poder ver los eventos y sus detalles
 
 # Especificación de requisitos
 
