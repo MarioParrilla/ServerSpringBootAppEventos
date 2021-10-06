@@ -8,11 +8,11 @@
 
 
 
-# [NOMBRE PROYECTO]
+# AppEventos
 
 ###### Curso: 2021/22
 
-###### AUTOR: [AUTOR]
+###### AUTOR: Mario Parrilla Maroto
 
 ------
 
@@ -20,11 +20,11 @@
 
 ## Motivación y objetivos
 
-Describe brevemente el motivo por el que has decidido realizar esta aplicación y que necesidad cubre.
+He decidido realizar una aplicacion de eventos para dar solucion a las personas que quieres quedar o pedir cita para un evento o situacion, como por ejemplo realizar una reunión, quedar alguien para contratarle...
 
 ## Descripción de la aplicación
 
-Describe brevemente el funcionamiento de la aplicación.
+Esta aplicacion, te permitirá 
 
 
 
