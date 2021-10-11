@@ -30,9 +30,14 @@ Esta aplicacion, te permitirá controlar los usuarios de la aplicacion movil y p
 
 ## Requisitos funcionales CMS
 
-Describe cada una de las funcionalidades que debe incluir la aplicación. 
+El administrador se deberá logear antes de poder entrar a las funcionalidades. Según quiera, el adminitrador podrá administrar usuarios o eventos
 
-Es recomendable incluir un diagrama de casos de uso.
+Administrar usuarios, donde podras ver su información, editar su información, añadir usuarios y eliminar usuarios
+
+Administrar citas o eventos, podras ver su información, editar su información, añadir usuarios y eliminar eventos
+
+Diagrama Casos de Uso:
+![casosUsoAdmin](casosUsoAdmin.png)
 
 ## Wireframe
 
