@@ -4,7 +4,7 @@
 
 ##### ACCESO A DATOS - 2º CURSO
 
-![logo-IESGP-FP](logo-IESGP-FP.png)
+![logo-IESGP-FP](./readmeAssets/logo-IESGP-FP.png)
 
 
 
@@ -38,7 +38,7 @@ Administrar citas o eventos, podras ver su información, editar su información,
 
 Diagrama Casos de Uso:
 
-![casosUsoAdmin](casosUsoAdmin.png)
+![casosUsoAdmin](./readmeAssets/Diagramas/casosUsoAdmin.png)
 
 ## Wireframe
 
