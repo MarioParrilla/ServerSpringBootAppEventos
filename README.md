@@ -37,6 +37,7 @@ Administrar usuarios, donde podras ver su información, editar su información, 
 Administrar citas o eventos, podras ver su información, editar su información, añadir usuarios y eliminar eventos
 
 Diagrama Casos de Uso:
+
 ![casosUsoAdmin](casosUsoAdmin.png)
 
 ## Wireframe
