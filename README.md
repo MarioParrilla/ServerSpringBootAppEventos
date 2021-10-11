@@ -42,7 +42,55 @@ Diagrama Casos de Uso:
 
 ## Wireframe
 
-Incluye un boceto y la descripción de cada una de las pantallas de la aplicación
+Página Inicio Sin Logearse:
+En esta pagina se podrá ver el inicio y ir a la pagina de login.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/inicioNoLogin.png)
+
+Página Login:
+En esta pagina podremos logearnos con nuestro usuario admin y guardar sesion.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/login.png)
+
+Página Inicio Con Login:
+Una vez logeados, podremos ver más opciones como usuarios, eventos y cerrar sesion.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/inicioLogin.png)
+
+Página Usuarios:
+No mostrará una tabla donde podremos ver la información de los usuarios y las acciones como añadir, editar y eliminar usuarios.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/usuarios.png)
+
+Página Agregar Usuario:
+En esta página podremos agregar un nuevo usuario incluyendo su información.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/agregarUsuario.png)
+
+Página Modificar Usuario:
+En esta página, podremos editar la información del usuario.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/editarUsuario.png)
+
+Página Eventos:
+No mostrará una tabla donde podremos ver la información de los eventos y las acciones como añadir, editar y eliminar eventos.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/eventos.png)
+
+Página Agregar Evento:
+En esta página podremos agregar un nuevo evento incluyendo su información.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/agregarEvento.png)
+
+Página Modificar Evento:
+En esta página, podremos editar la información del evento.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/editarEvento.png)
+
+Página Errores:
+Esta página se mostrará cuando ocurra cualquier error con la página.
+
+![logo-IESGP-FP](./readmeAssets/wireframe/error.png)
 
 ## API REST
 
