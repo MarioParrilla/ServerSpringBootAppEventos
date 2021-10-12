@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MyEvents - Inicio</title>
+  <title>MyEvents - Usuarios</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,10 +27,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/" class="nav-link">Inicio</a>
+        <a href="/menu" class="nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/login" class="nav-link">Login</a>
+        <a href="/usuarios" class="nav-link">Usuarios</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/eventos" class="nav-link">Eventos</a>
       </li>
     </ul>
 
@@ -49,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link">
+    <a href="/menu" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">MyEvents</span>
     </a>
@@ -71,13 +74,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/" class="nav-link">
+                <a href="/menu" class="nav-link">
                   <i class="fas fa-home nav-icon"></i>
                   <p>Inicio</p>
                 </a>
-                <a href="/login" class="nav-link">
-	              <i class="nav-icon fas fa-user"></i>
-	              <p>Login</p>
+            	<a href="/usuarios" class="nav-link">
+	              <i class="nav-icon fas fa-user-friends"></i>
+	              <p>Usuarios</p>
+            	</a>
+            	<a href="/eventos" class="nav-link">
+	              <i class="nav-icon fas fa-calendar-week"></i>
+	              <p>Eventos</p>
+            	</a>
+            	 <a href="/cerrarSesion" class="nav-link">
+	              <i class="nav-icon fas fa-user-alt-slash"></i>
+	              <p>Cerrar Sesion</p>
             	</a>
               </li>
             </ul>

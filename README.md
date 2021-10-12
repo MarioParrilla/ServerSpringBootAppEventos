@@ -106,7 +106,55 @@ Describe todos los requisitos no funcionales que se deben tener en cuenta para e
 
 ## Interfaz gráfico
 
-Incluye las imágenes con el diseño de las pantallas y cualquier descripción o comentario que creas conveniente.
+Página Inicio Sin Logearse:
+En esta pagina se podrá ver el inicio y ir a la pagina de login.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/inicioNoLogin.png)
+
+Página Login:
+En esta pagina podremos logearnos con nuestro usuario admin y guardar sesion.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/login.png)
+
+Página Inicio Con Login:
+Una vez logeados, podremos ver más opciones como usuarios, eventos y cerrar sesion.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/inicioLogin.png)
+
+Página Usuarios:
+No mostrará una tabla donde podremos ver la información de los usuarios y las acciones como añadir, editar y eliminar usuarios.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/usuarios.png)
+
+Página Agregar Usuario:
+En esta página podremos agregar un nuevo usuario incluyendo su información.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/agregarUsuario.png)
+
+Página Modificar Usuario:
+En esta página, podremos editar la información del usuario.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/editarUsuario.png)
+
+Página Eventos:
+No mostrará una tabla donde podremos ver la información de los eventos y las acciones como añadir, editar y eliminar eventos.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/eventos.png)
+
+Página Agregar Evento:
+En esta página podremos agregar un nuevo evento incluyendo su información.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/agregarEvento.png)
+
+Página Modificar Evento:
+En esta página, podremos editar la información del evento.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/editarEvento.png)
+
+Página Errores:
+Esta página se mostrará cuando ocurra cualquier error con la página.
+
+![logo-IESGP-FP](./readmeAssets/disennoGrafico/error.png)
 
 ## Diagrama de clases
 
