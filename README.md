@@ -30,11 +30,11 @@ Esta aplicacion, te permitirá controlar los usuarios de la aplicacion movil y p
 
 ## Requisitos funcionales CMS
 
-El administrador se deberá logear antes de poder entrar a las funcionalidades. Según quiera, el adminitrador podrá administrar usuarios o eventos
+RQ1 - Login: El administrador se deberá logear antes de poder entrar a las funcionalidades. Según quiera, el adminitrador podrá administrar usuarios o eventos
 
-Administrar usuarios, donde podras ver su información, editar su información, añadir usuarios y eliminar usuarios
+RQ2 - Gestión Usuarios: Se podrá administrar usuarios, donde podras ver su información, editar su información, añadir usuarios y eliminar usuarios
 
-Administrar citas o eventos, podras ver su información, editar su información, añadir usuarios y eliminar eventos
+RQ3 - Gestión Eventos: Se podrá administrar citas o eventos, podras ver su información, editar su información, añadir usuarios y eliminar eventos
 
 Diagrama Casos de Uso:
 
@@ -98,9 +98,9 @@ Describe los servicios, sus parámetros y el formato json de respuesta.
 
 ## Requisitos no funcionales
 
-Describe todos los requisitos no funcionales que se deben tener en cuenta para el desarrollo de la aplicación (seguridad, conectividad, tipos de dispositivos, memoria, procesador, espacio de almacenamiento, etc.)
-
-
+Seguridad: se necesitará un token para acceder a la api
+Conectividad: se necesitará conexión wifi para poder funcionar, con http
+Dispositivos: se podrá usar desde cualquier dispositivo con un navegador web
 
 # Análisis Funcional
 
