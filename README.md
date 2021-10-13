@@ -99,7 +99,9 @@ Describe los servicios, sus parámetros y el formato json de respuesta.
 ## Requisitos no funcionales
 
 Seguridad: se necesitará un token para acceder a la api
+
 Conectividad: se necesitará conexión wifi para poder funcionar, con http
+
 Dispositivos: se podrá usar desde cualquier dispositivo con un navegador web
 
 # Análisis Funcional
