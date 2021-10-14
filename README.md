@@ -45,56 +45,101 @@ Diagrama Casos de Uso:
 Página Inicio Sin Logearse:
 En esta pagina se podrá ver el inicio y ir a la pagina de login.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/inicioNoLogin.png)
+![inicioNoLogin](./readmeAssets/wireframe/inicioNoLogin.png)
 
 Página Login:
 En esta pagina podremos logearnos con nuestro usuario admin y guardar sesion.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/login.png)
+![login](./readmeAssets/wireframe/login.png)
 
 Página Inicio Con Login:
 Una vez logeados, podremos ver más opciones como usuarios, eventos y cerrar sesion.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/inicioLogin.png)
+![inicioLogin](./readmeAssets/wireframe/inicioLogin.png)
 
 Página Usuarios:
 No mostrará una tabla donde podremos ver la información de los usuarios y las acciones como añadir, editar y eliminar usuarios.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/usuarios.png)
+![usuarios](./readmeAssets/wireframe/usuarios.png)
 
 Página Agregar Usuario:
 En esta página podremos agregar un nuevo usuario incluyendo su información.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/agregarUsuario.png)
+![agregarUsuario](./readmeAssets/wireframe/agregarUsuario.png)
 
 Página Modificar Usuario:
 En esta página, podremos editar la información del usuario.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/editarUsuario.png)
+![editarUsuario](./readmeAssets/wireframe/editarUsuario.png)
 
 Página Eventos:
 No mostrará una tabla donde podremos ver la información de los eventos y las acciones como añadir, editar y eliminar eventos.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/eventos.png)
+![eventos](./readmeAssets/wireframe/eventos.png)
 
 Página Agregar Evento:
 En esta página podremos agregar un nuevo evento incluyendo su información.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/agregarEvento.png)
+![agregarEvento](./readmeAssets/wireframe/agregarEvento.png)
 
 Página Modificar Evento:
 En esta página, podremos editar la información del evento.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/editarEvento.png)
+![editarEvento](./readmeAssets/wireframe/editarEvento.png)
 
 Página Errores:
 Esta página se mostrará cuando ocurra cualquier error con la página.
 
-![logo-IESGP-FP](./readmeAssets/wireframe/error.png)
+![error](./readmeAssets/wireframe/error.png)
 
 ## API REST
 
-Describe los servicios, sus parámetros y el formato json de respuesta.
+FALTA EXPLICAR LAS IMAGENES!!!
+
+### API REST -- USUARIOS
+
+Obtener todos los usuarios: 
+
+![GetTodosUsuarios](./readmeAssets/ApiRest/GetTodosUsuarios.png)
+
+Obtener un usuario: 
+
+![GetUsuarioID](./readmeAssets/ApiRest/GetUsuarioID.png)
+
+Crear un usuario: 
+
+![PostCrearUsuario](./readmeAssets/ApiRest/PostCrearUsuario.png)
+
+Modificar un usuario: 
+
+![PutModificarUsuario](./readmeAssets/ApiRest/PutModificarUsuario.png)
+
+Eliminar un usuario: 
+
+![DeleteBorrarUsuario](./readmeAssets/ApiRest/DeleteBorrarUsuario.png)
+
+### API REST -- EVENTOS
+
+Obtener todos los eventos: 
+
+![GetTodosEventos](./readmeAssets/ApiRest/GetTodosEventos.png)
+
+Obtener un evento: 
+
+![GetEventoID](./readmeAssets/ApiRest/GetEventoID.png)
+
+Crear un evento: 
+
+![PostCrearEvento](./readmeAssets/ApiRest/PostCrearEvento.png)
+
+Modificar un evento: 
+
+![PutModificarEvento](./readmeAssets/ApiRest/PutModificarEvento.png)
+
+Eliminar un evento: 
+
+![DeleteBorrarEvento](./readmeAssets/ApiRest/DeleteBorrarEvento.png)
+
 
 ## Requisitos no funcionales
 
@@ -111,52 +156,52 @@ Dispositivos: se podrá usar desde cualquier dispositivo con un navegador web
 Página Inicio Sin Logearse:
 En esta pagina se podrá ver el inicio y ir a la pagina de login.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/inicioNoLogin.png)
+![inicioNoLogin](./readmeAssets/disennoGrafico/inicioNoLogin.png)
 
 Página Login:
 En esta pagina podremos logearnos con nuestro usuario admin y guardar sesion.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/login.png)
+![login](./readmeAssets/disennoGrafico/login.png)
 
 Página Inicio Con Login:
 Una vez logeados, podremos ver más opciones como usuarios, eventos y cerrar sesion.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/inicioLogin.png)
+![inicioLogin](./readmeAssets/disennoGrafico/inicioLogin.png)
 
 Página Usuarios:
 No mostrará una tabla donde podremos ver la información de los usuarios y las acciones como añadir, editar y eliminar usuarios.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/usuarios.png)
+![usuarios](./readmeAssets/disennoGrafico/usuarios.png)
 
 Página Agregar Usuario:
 En esta página podremos agregar un nuevo usuario incluyendo su información.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/agregarUsuario.png)
+![agregarUsuario](./readmeAssets/disennoGrafico/agregarUsuario.png)
 
 Página Modificar Usuario:
 En esta página, podremos editar la información del usuario.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/editarUsuario.png)
+![editarUsuario](./readmeAssets/disennoGrafico/editarUsuario.png)
 
 Página Eventos:
 No mostrará una tabla donde podremos ver la información de los eventos y las acciones como añadir, editar y eliminar eventos.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/eventos.png)
+![eventos](./readmeAssets/disennoGrafico/eventos.png)
 
 Página Agregar Evento:
 En esta página podremos agregar un nuevo evento incluyendo su información.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/agregarEvento.png)
+![agregarEvento](./readmeAssets/disennoGrafico/agregarEvento.png)
 
 Página Modificar Evento:
 En esta página, podremos editar la información del evento.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/editarEvento.png)
+![editarEvento](./readmeAssets/disennoGrafico/editarEvento.png)
 
 Página Errores:
 Esta página se mostrará cuando ocurra cualquier error con la página.
 
-![logo-IESGP-FP](./readmeAssets/disennoGrafico/error.png)
+![error](./readmeAssets/disennoGrafico/error.png)
 
 ## Diagrama de clases
 
