@@ -94,7 +94,7 @@ Esta página se mostrará cuando ocurra cualquier error con la página.
 
 ## API REST
 
-FALTA EXPLICAR LAS IMAGENES!!!
+FALTA EXPLICAR LAS IMAGENES!!! CAMBIAR CAPTURAS USUARIO (CAMBIE EL NOMBRE DEL ID USUARIO)
 
 ### API REST -- USUARIOS
 
@@ -156,52 +156,52 @@ Dispositivos: se podrá usar desde cualquier dispositivo con un navegador web
 Página Inicio Sin Logearse:
 En esta pagina se podrá ver el inicio y ir a la pagina de login.
 
-![inicioNoLogin](./readmeAssets/disennoGrafico/inicioNoLogin.png)
+![inicioNoLogin](./readmeAssets/DisennoGrafico/inicioNoLogin.png)
 
 Página Login:
 En esta pagina podremos logearnos con nuestro usuario admin y guardar sesion.
 
-![login](./readmeAssets/disennoGrafico/login.png)
+![login](./readmeAssets/DisennoGrafico/login.png)
 
 Página Inicio Con Login:
 Una vez logeados, podremos ver más opciones como usuarios, eventos y cerrar sesion.
 
-![inicioLogin](./readmeAssets/disennoGrafico/inicioLogin.png)
+![inicioLogin](./readmeAssets/DisennoGrafico/inicioLogin.png)
 
 Página Usuarios:
 No mostrará una tabla donde podremos ver la información de los usuarios y las acciones como añadir, editar y eliminar usuarios.
 
-![usuarios](./readmeAssets/disennoGrafico/usuarios.png)
+![usuarios](./readmeAssets/DisennoGrafico/usuarios.png)
 
 Página Agregar Usuario:
 En esta página podremos agregar un nuevo usuario incluyendo su información.
 
-![agregarUsuario](./readmeAssets/disennoGrafico/agregarUsuario.png)
+![agregarUsuario](./readmeAssets/DisennoGrafico/agregarUsuario.png)
 
 Página Modificar Usuario:
 En esta página, podremos editar la información del usuario.
 
-![editarUsuario](./readmeAssets/disennoGrafico/editarUsuario.png)
+![editarUsuario](./readmeAssets/DisennoGrafico/editarUsuario.png)
 
 Página Eventos:
 No mostrará una tabla donde podremos ver la información de los eventos y las acciones como añadir, editar y eliminar eventos.
 
-![eventos](./readmeAssets/disennoGrafico/eventos.png)
+![eventos](./readmeAssets/DisennoGrafico/eventos.png)
 
 Página Agregar Evento:
 En esta página podremos agregar un nuevo evento incluyendo su información.
 
-![agregarEvento](./readmeAssets/disennoGrafico/agregarEvento.png)
+![agregarEvento](./readmeAssets/DisennoGrafico/agregarEvento.png)
 
 Página Modificar Evento:
 En esta página, podremos editar la información del evento.
 
-![editarEvento](./readmeAssets/disennoGrafico/editarEvento.png)
+![editarEvento](./readmeAssets/DisennoGrafico/editarEvento.png)
 
 Página Errores:
 Esta página se mostrará cuando ocurra cualquier error con la página.
 
-![error](./readmeAssets/disennoGrafico/error.png)
+![error](./readmeAssets/DisennoGrafico/error.png)
 
 ## Diagrama de clases
 
@@ -209,7 +209,9 @@ Se debe incluir un diagrama de clases, la descripción de las mismas.
 
 ## Diagrama E/R
 
-Describe las tablas de la base de datos local e incluye un diagrama Entidad/Relación.
+Describe las tablas de la base de datos local!!!
+
+![entidadRealacion](./readmeAssets/Diagramas/entidadRelacion.png)
 
 ## Plan de pruebas
 
