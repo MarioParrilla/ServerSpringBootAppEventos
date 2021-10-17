@@ -36,11 +36,11 @@ public class Usuario implements Serializable{
 	@Column(nullable = false)
 	private Boolean enabled;
 	
-	public Long getIdUser() {
-		return idUser;
+	public Long getUserID() {
+		return userID;
 	}
-	public void setIdUser(Long idUser) {
-		this.idUser = idUser;
+	public void setUserID(Long userID) {
+		this.userID = userID;
 	}
 	public String getUsername() {
 		return username;

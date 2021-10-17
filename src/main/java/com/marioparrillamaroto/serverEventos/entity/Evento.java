@@ -28,6 +28,9 @@ public class Evento implements Serializable{
 	@Column(nullable = false, length = 15)
 	private String eventName;
 	
+	@Column(nullable = false, length = 15)
+	private String tema;
+
 	@Column(nullable = false)
 	private LocalDateTime startTime;
 	
@@ -50,7 +53,6 @@ public class Evento implements Serializable{
 	@ManyToOne
 	private Usuario userOwner;
 	
-	@JoinColumn(nullable = false)
 	@ManyToOne
 	private Usuario userSummoner;
 
@@ -68,6 +70,14 @@ public class Evento implements Serializable{
 
 	public void setEventName(String eventName) {
 		this.eventName = eventName;
+	}
+	
+	public String getTema() {
+		return tema;
+	}
+
+	public void setTema(String tema) {
+		this.tema = tema;
 	}
 
 	public LocalDateTime getStartTime() {
