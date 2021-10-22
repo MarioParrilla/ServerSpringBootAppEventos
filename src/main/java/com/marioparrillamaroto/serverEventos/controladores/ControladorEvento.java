@@ -11,8 +11,23 @@ public class ControladorEvento {
 		return "eventos";
 	}
 	
-    @PostMapping("/eventos")
-	public String root2() {
+	@PostMapping("/eventos")
+	public String resolverEvento() {
 		return "eventos";
+	}
+
+	@PostMapping("/agregarEvento")
+	public String agregarEvento() {
+		return "agregarEvento";
+	}
+
+	@PostMapping("/editarEvento")
+	public String editarEvento() {
+		return "editarEvento";
+	}
+
+	@PostMapping("/eliminarEvento")
+	public String eliminarEvento() {
+		return "usuarios";
 	}
 }

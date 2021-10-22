@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class ControladorAgregarEvento {
-    @GetMapping("/agregarEvento")
+public class ControladorIndexFull {
+    @GetMapping("/menu")
 	public String root() {
-		return "agregarEvento";
+		return "menu";
 	}
-    
-    @PostMapping("/agregarEvento")
-	public String root2() {
-		return "agregarEvento";
+
+	@GetMapping("/cerrarSesion")
+	public String cerrarSesion(){
+		return "redirect:/";
 	}
 }

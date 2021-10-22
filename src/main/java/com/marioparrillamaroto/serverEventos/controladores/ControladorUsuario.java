@@ -10,9 +10,24 @@ public class ControladorUsuario {
 	public String root() {
 		return "usuarios";
 	}
+
+	@PostMapping("/usuarios")
+	public String resolverUsuario() {
+		return "usuarios";
+	}
     
-    @PostMapping("/usuarios")
-	public String root2() {
+	@PostMapping("/agregarUsuario")
+	public String agregarUsuario() {
+		return "agregarUsuario";
+	}
+
+	@PostMapping("/editarUsuario")
+	public String editarUsuario() {
+		return "editarUsuario";
+	}
+
+	@PostMapping("/eliminarUsuario")
+	public String eliminarUsuario() {
 		return "usuarios";
 	}
 }
