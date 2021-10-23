@@ -34,6 +34,9 @@ public class Usuario implements Serializable{
 	private String phonenumber;
 	
 	@Column(nullable = false)
+	private Boolean cmsAdmin;
+
+	@Column(nullable = false)
 	private Boolean enabled;
 	
 	public Long getUserID() {
@@ -71,6 +74,12 @@ public class Usuario implements Serializable{
 	}
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
+	}
+	public Boolean getCmsAdmin() {
+		return cmsAdmin;
+	}
+	public void setCmsAdmin(Boolean cmsAdmin) {
+		this.cmsAdmin = cmsAdmin;
 	}
 	
 	
