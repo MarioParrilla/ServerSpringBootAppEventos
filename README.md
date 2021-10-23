@@ -203,7 +203,7 @@ Esta página se mostrará cuando ocurra cualquier error con la página.
 
 ## Diagrama de clases
 
-Se debe incluir un diagrama de clases, la descripción de las mismas.
+![diagramaClases](./readmeAssets/Diagramas/clases.png)
 
 ## Diagrama E/R
 
