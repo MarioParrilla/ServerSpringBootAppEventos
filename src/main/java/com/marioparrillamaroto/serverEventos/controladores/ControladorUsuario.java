@@ -17,6 +17,7 @@ public class ControladorUsuario {
 	@Autowired
 	private UserRepository userRepository;
 
+	//Consultar Usuarios
     @GetMapping("/usuarios")
 	public String root(Model model) {
 		model.addAttribute("msgError", new InfoMessage("", 1));
@@ -29,6 +30,7 @@ public class ControladorUsuario {
 		return "agregarUsuario";
 	}
 
+	//Agregar Usuarios
 	@PostMapping("/agregarUsuario")
 	public String agregarUsuarioRoot(Model model, @RequestParam(name = "username") String username, @RequestParam(name = "password") String password
 	, @RequestParam(name = "email") String email, @RequestParam(name = "phonenumber") String phonenumber) {
@@ -52,6 +54,7 @@ public class ControladorUsuario {
 		return "usuarios";
 	}
 
+	//Editar Usuarios
 	@GetMapping("/editarUsuario")
 	public String editarUsuario(Model model, @RequestParam(name = "userid") Long userid) {
 		String destino = "usuarios";
@@ -65,9 +68,10 @@ public class ControladorUsuario {
 		return destino;
 	}
 
+	//Editar Usuarios
 	@PostMapping("/editarUsuario")
 	public String editarUsuarioRoot(Model model, @RequestParam(name = "userid") Long userid, @RequestParam(name = "username") String username, @RequestParam(name = "password") String password
-	, @RequestParam(name = "email") String email, @RequestParam(name = "phonenumber") String phonenumber) {
+	, @RequestParam(name = "email") String email, @RequestParam(name = "phonenumber") String phonenumber, @RequestParam(name = "enabled") Boolean enabled, @RequestParam(name = "cmsadmin") Boolean cmsadmin) {
 
 		try {
 			Usuario user = new Usuario();
@@ -76,19 +80,20 @@ public class ControladorUsuario {
 			user.setPassword(password);
 			user.setEmail(email);
 			user.setPhonenumber(phonenumber);
-			user.setEnabled(true);
-			user.setCmsAdmin(false);
+			user.setEnabled(enabled);
+			user.setCmsAdmin(cmsadmin);
 
 			userRepository.save(user);
 			model.addAttribute("msgError", new InfoMessage("📝¡El usuario se modificó correctamente!", 0));
 		} catch (Exception e) {
-			model.addAttribute("msgError", new InfoMessage("❌¡No se pudo modificar el usuario correctamente!", 0));
+			model.addAttribute("msgError", new InfoMessage("❌¡No se pudo modificar el usuario correctamente, algún dato ya existen en algún usuario!", 0));
 		}
 
 		model.addAttribute("usuarios", userRepository.findAll());
 		return "usuarios";
 	}
 
+	//Eliminar Usuarios
 	@PostMapping("/eliminarUsuario")
 	public String eliminarUsuario(Model model, @RequestParam(name = "userid") Long userid) {
 		try {
