@@ -128,357 +128,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<table id="tablaUsuarios" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>columna1</th>
-                    <th>columna2</th>
-                    <th>columna3</th>
-                    <th>columna4</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Tema</th>
+                    <th>Inicio</th>
+                    <th>Final</th>
+                    <th>User Owner</th>
+                    <th>User Summoner</th>
+                    <th>Preferencia</th>
+                    <th>Coordenadas</th>
+                    <th>Enlace</th>
+                    <th>Disponible</th>
                     <th>Acciones</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
+                  <tr th:each="evento : ${eventos}">
+                    <td th:text="${evento.getEventID()}"></td>
+                    <td th:text="${evento.getEventName()}"></td>
+                    <td th:text="${evento.getTema()}"></td>
+                    <td th:text="${evento.getStartTime()}"></td>
+                    <td th:text="${evento.getEndTime()}"></td>
+                    <td th:text="${evento.getUserOwner().getUsername()}"></td>
+                    <td th:text="${evento.getUserSummoner().getUsername()}"></td>
+                    <td th:text="${evento.getEventPreference()}"></td>
+                    <td th:text="${evento.getCoordinates()}"></td>
+                    <td th:text="${evento.getVideomeeting()}"></td>
+                    <td th:text="${evento.getAvailable()}"></td>
                     <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                     <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>dato1</td>
-                    <td>dato2</td>
-                    <td>dato3</td>
-                    <td>dato4</td>
-                    <td>
-                    	<form method="post" action=/editarEvento>
-                    		<input type="submit" name="botonModificar" value="Editar">
-                    	</form>
-                    	<form method="post" action=/eliminarEvento>
-                    		<input type="submit" name="botonEliminar" value="Eliminar">
-                    	</form>
+                      <form method="post" action=/editarEvento>
+                        <input type="submit" name="botonModificar" value="Editar">
+                      </form>
+                      <form method="post" action=/eliminarEvento>
+                        <input type="submit" name="botonEliminar" value="Eliminar">
+                      </form>
                     </td>
                   </tr>
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>columna1</th>
-                    <th>columna2</th>
-                    <th>columna3</th>
-                    <th>columna4</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Tema</th>
+                    <th>Inicio</th>
+                    <th>Final</th>
+                    <th>User Owner</th>
+                    <th>User Summoner</th>
+                    <th>Preferencia</th>
+                    <th>Coordenadas</th>
+                    <th>Enlace</th>
+                    <th>Disponible</th>
                     <th>Acciones</th>
                   </tr>
                   </tfoot>

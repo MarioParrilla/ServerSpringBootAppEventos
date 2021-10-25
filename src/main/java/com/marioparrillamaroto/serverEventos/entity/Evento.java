@@ -78,16 +78,16 @@ public class Evento implements Serializable{
 		this.tema = tema;
 	}
 
-	public LocalDateTime getStartTime() {
-		return startTime;
+	public String getStartTime() {
+		return startTime.toString();
 	}
 
 	public void setStartTime(String startTime) {
 		this.startTime = LocalDateTime.parse(startTime);
 	}
 
-	public LocalDateTime getEndTime() {
-		return endTime;
+	public String getEndTime() {
+		return endTime.toString();
 	}
 
 	public void setEndTime(String endTime) {

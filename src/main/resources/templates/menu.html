@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -78,18 +80,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <i class="fas fa-home nav-icon"></i>
                   <p>Inicio</p>
                 </a>
-            	<a href="/usuarios" class="nav-link">
-	              <i class="nav-icon fas fa-user-friends"></i>
-	              <p>Usuarios</p>
-            	</a>
-            	<a href="/eventos" class="nav-link">
-	              <i class="nav-icon fas fa-calendar-week"></i>
-	              <p>Eventos</p>
-            	</a>
-            	 <a href="/cerrarSesion" class="nav-link">
-	              <i class="nav-icon fas fa-user-alt-slash"></i>
-	              <p>Cerrar Sesion</p>
-            	</a>
+                <a href="/usuarios" class="nav-link">
+                  <i class="nav-icon fas fa-user-friends"></i>
+                  <p>Usuarios</p>
+                </a>
+                <a href="/eventos" class="nav-link">
+                  <i class="nav-icon fas fa-calendar-week"></i>
+                  <p>Eventos</p>
+                </a>
+                <a href="/cerrarSesion" class="nav-link">
+                  <i class="nav-icon fas fa-user-alt-slash"></i>
+                  <p>Cerrar Sesion</p>
+                </a>
               </li>
             </ul>
           </li>
@@ -131,7 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 			<div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3 th:text="${estadisticasUsuario}"></h3>
 
                 <p>Usuarios Registrados</p>
               </div>
@@ -146,7 +148,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>21</h3>
+                <h3 th:text="${estadisticasEvento}"></h3>
 
                 <p>Eventos Creados</p>
               </div>
