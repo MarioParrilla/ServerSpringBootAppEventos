@@ -42,6 +42,7 @@ public class Usuario implements Serializable{
 	public Long getUserID() {
 		return userID;
 	}
+
 	public void setUserID(Long userID) {
 		this.userID = userID;
 	}

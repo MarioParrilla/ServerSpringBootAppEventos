@@ -15,6 +15,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+  <style>
+    .content-wrapper{
+      background-color: white;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -157,9 +163,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td th:text="${evento.getAvailable()}"></td>
                     <td>
                       <form method="post" action=/editarEvento>
+                        <input type="hidden" name="userid" th:value="${evento.getEventID()}">
                         <input type="submit" name="botonModificar" value="Editar">
                       </form>
                       <form method="post" action=/eliminarEvento>
+                        <input type="hidden" name="userid" th:value="${evento.getEventID()}">
                         <input type="submit" name="botonEliminar" value="Eliminar">
                       </form>
                     </td>

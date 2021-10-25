@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -15,6 +17,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <style>
+    .content-wrapper{
+      background-color: white;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -108,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Usuarios</h1>
-            <form method="post" action=/agregarUsuario>
+            <form method="get" action=/agregarUsuario>
         		<input type="submit" name="botonAgregar" value="Agregar Usuario">
         	</form>
           </div><!-- /.col -->
@@ -123,9 +130,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
 
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-				<table id="tablaUsuarios" class="table table-bordered table-hover">
+        <div class="card card-primary card-outline" th:if="${msgError.getMessageCode() == 0}">
+          <div class="card-body">
+            <h5 class="card-title">ℹ️ MyEvents Admin: </h5>
+            <p class="card-text">
+              Mensaje: <span th:text="${msgError.getMessage()}"></span>
+            </p>		
+          </div>
+        </div>
+
+            <div>
+              <div>
+				        <table id="tablaUsuarios" class="table table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>ID</th>
@@ -146,10 +162,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td th:text="${usuario.getEnabled()}"></td>
                     <td th:text="${usuario.getCmsAdmin()}"></td>
                     <td>
-                    	<form method="post" action=/editarUsuario>
+                    	<form method="get" th:action="@{/editarUsuario?userid=${usuarios.getUserID()}}">
+                        <input type="hidden" name="userid" th:value="${usuario.getUserID()}">
                     		<input type="submit" name="botonModificar" value="Editar">
                     	</form>
                     	<form method="post" action=/eliminarUsuario>
+                        <input type="hidden" name="userid" th:value="${usuario.getUserID()}">
                     		<input type="submit" name="botonEliminar" value="Eliminar">
                     	</form>
                     </td>
@@ -221,7 +239,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       "ordering": true,
       "info": true,
       "autoWidth": false,
-      "responsive": true,
+      "responsive": false,
     });
   });
 </script>

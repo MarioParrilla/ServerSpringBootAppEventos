@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -129,23 +131,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="card card-primary">
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="formEditarUsuario" method="post" action="/usuarios">
+              <form id="formEditarUsuario" method="post" action="/editarUsuario">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="dato1">dato1</label>
-                    <input type="text" name="dato1" class="form-control" id="dato1" placeholder="dato1">
+                    <label for="userid">ID</label>
+                    <input type="text" name="userid" class="form-control" id="userid" placeholder="userid" th:value="${usuario.getUserID()}"/>
                   </div>
                   <div class="form-group">
-                    <label for="dato2">dato2</label>
-                    <input type="text" name="dato2" class="form-control" id="dato2" placeholder="dato2">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="username" th:value="${usuario.getUsername()}"/>
                   </div>
                   <div class="form-group">
-                    <label for="dato3">dato3</label>
-                    <input type="text" name="dato3" class="form-control" id="dato3" placeholder="dato3">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="password"/>
                   </div>
                   <div class="form-group">
-                    <label for="dato4">dato4</label>
-                    <input type="text" name="dato4" class="form-control" id="dato4" placeholder="dato4">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="form-control" id="email" placeholder="email" th:value="${usuario.getEmail()}"/>
                   </div>
                 </div>
                 <!-- /.card-body -->
