@@ -53,7 +53,7 @@ public class ControladorEvento {
 			eventRepository.save(event);
 			model.addAttribute("msgError", new InfoMessage("➕¡El evento se agregó correctamente!", 0));
 		} catch (Exception e) {
-			model.addAttribute("msgError", new InfoMessage("❌¡Ya existe un evento con datos del nuevo o el evento no se pudo agregar!", 0));
+			model.addAttribute("msgError", new InfoMessage("❌¡Ya existe un evento con datos del nuevo o el evento no se pudo agregar por valor no valido!", 0));
 		}
 
 		model.addAttribute("eventos", eventRepository.findAll());
