@@ -67,7 +67,14 @@ public class ControladorEvento {
 	}
 
 	@PostMapping("/eliminarEvento")
-	public String eliminarEvento() {
-		return "usuarios";
+	public String eliminarEvento(Model model, @RequestParam(name = "eventid") Long eventid) {
+		try {
+			eventRepository.deleteById(eventid);
+			model.addAttribute("msgError", new InfoMessage("➖¡El evento se eliminó correctamente!", 0));
+		} catch (Exception e) {
+			model.addAttribute("msgError", new InfoMessage("❌¡No se pudo eliminar el evento!", 0));
+		}
+		model.addAttribute("eventos", eventRepository.findAll());
+		return "eventos";
 	}
 }

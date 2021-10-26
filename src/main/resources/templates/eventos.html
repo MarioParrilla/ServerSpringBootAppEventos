@@ -172,11 +172,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td th:text="${evento.getAvailable()}"></td>
                     <td>
                       <form method="post" action=/editarEvento>
-                        <input type="hidden" name="userid" th:value="${evento.getEventID()}">
+                        <input type="hidden" name="eventid" th:value="${evento.getEventID()}">
                         <input type="submit" name="botonModificar" value="Editar">
                       </form>
                       <form method="post" action=/eliminarEvento>
-                        <input type="hidden" name="userid" th:value="${evento.getEventID()}">
+                        <input type="hidden" name="eventid" th:value="${evento.getEventID()}">
                         <input type="submit" name="botonEliminar" value="Eliminar">
                       </form>
                     </td>
