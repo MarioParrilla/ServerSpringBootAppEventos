@@ -147,13 +147,17 @@ txtTema.addEventListener("change", () =>{
     }
 });
 
-//TODO: AGREGAR VERIFICACIÓN DE QUE LA FECHA DE INICIO VA ANTES QUE LA DE FIN
-
 txtInicio.addEventListener("change", () =>{
-    let text = txtInicio.value;
-    if(text.length>0){
+    let text2 = txtInicio.value;
+    let text = txtFin.value;
+    if(text2.length>0 && !(new Date(text) < new Date(text2))){
         lblInicio.innerText = "✔️";
         Comprobaciones.inicio=true;
+        checkInputs();
+    }
+    else if (new Date(text) < new Date(text2)) {
+        lblInicio.innerText = "❌¡Elige una fecha de inicio que sea antes de fin!❌";
+        Comprobaciones.inicio=false;
         checkInputs();
     }
     else{
@@ -165,9 +169,15 @@ txtInicio.addEventListener("change", () =>{
 
 txtFin.addEventListener("change", () =>{
     let text = txtFin.value;
-    if(text.length>0){
+    let text2 = txtInicio.value;
+    if(text.length>0 && !(new Date(text) < new Date(text2))){
         lblFin.innerText = "✔️";
         Comprobaciones.fin=true;
+        checkInputs();
+    }
+    else if (new Date(text) < new Date(text2)) {
+        lblFin.innerText = "❌¡Elige una fecha de fin que sea después de inicio!❌";
+        Comprobaciones.fin=false;
         checkInputs();
     }
     else{
