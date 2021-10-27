@@ -6,23 +6,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ControladorIndex {
-    @GetMapping("/")
-	public String root() {
-		return "index";
-	}
-
-	@GetMapping("/index")
-	public String root2() {
-		return "index";
-	}
-
     @GetMapping("/login")
 	public String login() {
 		return "login";
 	}
 
-	@PostMapping("/resolveLogin")
+	@PostMapping("/login")
 	public String resolveLogin(){
-		return "redirect:/menu";
+		return "redirect:/";
 	}
 }

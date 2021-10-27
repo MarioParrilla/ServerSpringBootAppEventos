@@ -3,7 +3,7 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html lang="en">
+<html lang="en" xmlns:th="https://thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -128,28 +128,59 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="card card-primary">
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="formEditarEvento" method="post" action="/eventos">
+              <form id="formEditarEvento" method="post" action="/editarEvento">
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="dato1">dato1</label>
-                    <input type="text" name="dato1" class="form-control" id="dato1" placeholder="dato1">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="eventid">ID Evento</label>
+                      <input type="number" name="eventid" class="form-control" id="eventid" placeholder="ID Evento" th:value="${evento.getEventID()}"  readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="userowner">ID Usuario Dueño</label><span id="lblUserOwner"></span>
+                      <input type="number" name="userowner" class="form-control" id="userowner" placeholder="ID Usuario Dueño" th:value="${evento.getUserOwner().getUserID()}"  readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="usersummoner">ID Usuario Citador</label><span id="lblUserSummoner"></span>
+                      <input type="number" name="usersummoner" class="form-control" id="usersummoner" placeholder="ID Usuario Citador" th:value="${evento.getUserSummoner().getUserID()}" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="eventname">Nombre Evento</label><span id="lblEventName"></span>
+                      <input type="text" name="eventname" class="form-control" id="eventname" placeholder="Nombre Evento" th:value="${evento.getEventName()}">
+                    </div>
+                    <div class="form-group">
+                      <label for="tema">Tema</label><span id="lblTema"></span>
+                      <input type="text" name="tema" class="form-control" id="tema" placeholder="Tema" th:value="${evento.getTema()}">
+                    </div>
+                    <div class="form-group">
+                      <label for="starttime">Inicio</label><span id="lblInicio"></span>
+                      <input type="datetime-local" name="starttime" class="form-control" id="starttime" placeholder="Inicio" th:value="${evento.getStartTime()}">
+                    </div>
+                    <div class="form-group">
+                      <label for="endtime">Fin</label><span id="lblFin"></span>
+                      <input type="datetime-local" name="endtime" class="form-control" id="endtime" placeholder="Fin" th:value="${evento.getEndTime()}">
+                    </div>
+                    <div class="form-group" id="coorDiv">
+                      <label for="coordinates">Coordenadas</label><span id="lblCoordenadas"></span>
+                      <input type="text" name="coordinates" class="form-control" id="coordinates" placeholder="Coordenadas" th:value="${evento.getCoordinates()}">
+                    </div>
+                    <div class="form-group" id="videoDiv">
+                      <label for="videomeeting">Enlace Videomeeting</label><span id="lblVideomeeting"></span>
+                      <input type="text" name="videomeeting" class="form-control" id="videomeeting" placeholder="Enlace Videomeeting" th:value="${evento.getVideomeeting()}">
+                    </div>
+                    <div class="form-group">
+                      <label for="eventpreference">Preferencia del Evento</label><br><hr>
+                      Presencial<input type="radio" name="eventpreference" class="form-control" value="false" id="eventpreferencecoordinates" checked/><hr>
+                      Videomeeting<input type="radio" name="eventpreference" class="form-control" value="true" id="eventpreferencevideomeeting"/><hr>
+                    </div>
+                    <div class="form-group">
+                      <label for="enabled">Habilitado</label><br><hr>
+                      Si<input type="radio" name="enabled" class="form-control" value="true" id="enabledTrue" checked/><hr>
+                      No<input type="radio" name="enabled" class="form-control" value="false" id="enabledFalse"/><hr>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="dato2">dato2</label>
-                    <input type="text" name="dato2" class="form-control" id="dato2" placeholder="dato2">
-                  </div>
-                  <div class="form-group">
-                    <label for="dato3">dato3</label>
-                    <input type="text" name="dato3" class="form-control" id="dato3" placeholder="dato3">
-                  </div>
-                  <div class="form-group">
-                    <label for="dato4">dato4</label>
-                    <input type="text" name="dato4" class="form-control" id="dato4" placeholder="dato4">
-                  </div>
-                </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Editar Evento</button>
+                  <button type="submit" class="btn btn-primary" id="btnSubmit">Editar Evento</button>
                 </div>
               </form>
             </div>
@@ -184,7 +215,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
+<script src="../../jsMyEventsApp/ValidationEvent.js"></script>
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->

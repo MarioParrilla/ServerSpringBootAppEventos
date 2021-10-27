@@ -27,11 +27,14 @@ public class ControladorEvento {
 		return "eventos";
 	}
 	
+	
+	//Agregar Evento
 	@GetMapping("/agregarEvento")
 	public String agregarEvento() {
 		return "agregarEvento";
 	}
 
+	//Agregar Evento
 	@PostMapping("/agregarEvento")
 	public String agregarEventoRoot(Model model, @RequestParam(name = "eventname") String eventname, @RequestParam(name = "tema") String tema, @RequestParam(name = "starttime") String startTime, 
 		@RequestParam(name = "endtime") String endTime, @RequestParam(name = "enabled") Boolean available, @RequestParam(name = "eventpreference") Boolean eventPreference, 
@@ -61,9 +64,49 @@ public class ControladorEvento {
 		return "eventos";
 	}
 
+		//Editar Evento
+		@GetMapping("/editarEvento")
+		public String editarEvento(Model model, @RequestParam(name = "eventid") Long eventid) {
+			String destino = "eventos";
+			try {
+				Evento event = eventRepository.findById(eventid).orElseThrow(() -> new IllegalArgumentException("Invalid event Id:" + eventid));
+				model.addAttribute("evento", event);
+				destino = "editarEvento";
+			} catch (Exception e) {
+				model.addAttribute("msgError", new InfoMessage("❌¡No se pudo modificar el evento correctamente!", 0));
+			}
+			return destino;
+		}
+
+	//Editar Evento
 	@PostMapping("/editarEvento")
-	public String editarEvento() {
-		return "editarEvento";
+	public String editarEventoRoot(Model model, @RequestParam(name = "eventid") Long eventid, @RequestParam(name = "eventname") String eventname, @RequestParam(name = "tema") String tema, @RequestParam(name = "starttime") String startTime, 
+	@RequestParam(name = "endtime") String endTime, @RequestParam(name = "enabled") Boolean available, @RequestParam(name = "eventpreference") Boolean eventPreference, 
+	@RequestParam(name = "coordinates") String coordinates, @RequestParam(name = "videomeeting") String videomeeting, @RequestParam(name = "userowner") Long userOwner, @RequestParam(name = "usersummoner") Long userSummoner) {
+
+		try {
+			Evento event = new Evento();
+			event.setEventID(eventid);
+			event.setEventName(eventname);
+			event.setTema(tema);
+			event.setStartTime(startTime);
+			event.setEndTime(endTime);
+			event.setAvailable(available);
+			event.setEventPreference(eventPreference);
+			event.setCoordinates(coordinates);
+			event.setVideomeeting(videomeeting);
+			event.setUserOwner(userRepository.findById(userOwner).orElseThrow(() ->  new IllegalArgumentException("Usuario owner no encontrado")));
+			event.setUserSummoner(userRepository.findById(userSummoner).orElseThrow(() -> new IllegalArgumentException("Usuario summoner no encontrado")));
+			
+			eventRepository.save(event);
+			model.addAttribute("msgError", new InfoMessage("➕¡El evento se agregó correctamente!", 0));
+		} catch (Exception e) {
+			model.addAttribute("msgError", new InfoMessage("❌¡Ya existe un evento con datos del nuevo o el evento no se pudo agregar por valor no valido!", 0));
+		}
+
+		model.addAttribute("eventos", eventRepository.findAll());
+		
+		return "eventos";
 	}
 
 	@PostMapping("/eliminarEvento")

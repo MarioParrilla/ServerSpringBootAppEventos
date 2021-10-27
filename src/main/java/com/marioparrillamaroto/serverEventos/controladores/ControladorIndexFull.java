@@ -20,11 +20,11 @@ public class ControladorIndexFull {
 	public String root(Model model) {
 		model.addAttribute("estadisticasUsuario", userRepository.count());
 		model.addAttribute("estadisticasEvento", eventRepository.count());
-		return "menu";
+		return "index";
 	}
 
 	@GetMapping("/cerrarSesion")
 	public String cerrarSesion(){
-		return "redirect:/";
+		return "redirect:/login";
 	}
 }
