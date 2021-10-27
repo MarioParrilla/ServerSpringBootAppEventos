@@ -39,7 +39,7 @@ public class ControladorUsuario {
 		try {
 			Usuario user = new Usuario();
 			user.setUsername(username);
-			user.setPassword(new BCryptPasswordEncoder().encode(password));
+			user.setPassword(new BCryptPasswordEncoder(4).encode(password));
 			user.setEmail(email);
 			user.setPhonenumber(phonenumber);
 			user.setEnabled(true);
@@ -72,13 +72,15 @@ public class ControladorUsuario {
 	//Editar Usuarios
 	@PostMapping("/editarUsuario")
 	public String editarUsuarioRoot(Model model, @RequestParam(name = "userid") Long userid, @RequestParam(name = "username") String username, @RequestParam(name = "password") String password
-	, @RequestParam(name = "email") String email, @RequestParam(name = "phonenumber") String phonenumber, @RequestParam(name = "enabled") Boolean enabled, @RequestParam(name = "cmsadmin") Boolean cmsadmin) {
+	, @RequestParam(name = "email") String email, @RequestParam(name = "phonenumber") String phonenumber, @RequestParam(name = "enabled") Boolean enabled, @RequestParam(name = "cmsadmin") Boolean cmsadmin,
+	@RequestParam(name = "oldpassword") String oldpassword) {
 
 		try {
 			Usuario user = new Usuario();
 			user.setUserID(userid);
 			user.setUsername(username);
-			user.setPassword(new BCryptPasswordEncoder().encode(password));
+			if(!oldpassword.equals(password)) user.setPassword(new BCryptPasswordEncoder(4).encode(password));
+			else user.setPassword(new BCryptPasswordEncoder(4).encode(oldpassword));
 			user.setEmail(email);
 			user.setPhonenumber(phonenumber);
 			user.setEnabled(enabled);

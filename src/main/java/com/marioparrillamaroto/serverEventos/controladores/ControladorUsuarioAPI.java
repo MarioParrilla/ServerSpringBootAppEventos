@@ -3,6 +3,8 @@ package com.marioparrillamaroto.serverEventos.controladores;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,28 +26,28 @@ public class ControladorUsuarioAPI {
 	
 	//Buscar Usuarios
 	@GetMapping("/usuario")
-	public ArrayList<Usuario> getUsuarios(){
-		return (ArrayList<Usuario>) userRepository.findAll();
+	public ResponseEntity<Usuario> getUsuarios(){
+		return new ResponseEntity( userRepository.findAll(), HttpStatus.FOUND);
 	}
 	
 	//Buscar Usuario
 	@GetMapping("/usuario/{userID}")
-	public Usuario getUsuario(@PathVariable("userID") Long userID){
-		return userRepository.findById(userID).orElse(null);
+	public ResponseEntity<Usuario> getUsuario(@PathVariable("userID") Long userID){
+		return new ResponseEntity( userRepository.findById(userID).orElse(null), HttpStatus.FOUND);
 	}
 	
 	//Guardar Usuario
 	@PostMapping("/usuario")
-	public String guardarUsuario(@RequestBody Usuario user) {
+	public ResponseEntity<Usuario> guardarUsuario(@RequestBody Usuario user) {
 		userRepository.save(user);
-		return "usuario";
+		return new ResponseEntity(userRepository.findById(user.getUserID()).orElse(null),HttpStatus.CREATED);
 	}
 	
 	//Borrar Usuario
 	@DeleteMapping("/usuario/{userID}")
-	public String eliminarUsuario(@PathVariable("userID") Long userID) {
+	public ResponseEntity<Usuario> eliminarUsuario(@PathVariable("userID") Long userID) {
 		userRepository.deleteById(userID);
-		return "usuario";
+		return new ResponseEntity(null, HttpStatus.ACCEPTED);
 	}
 	
 	//Modificar Usuario

@@ -5,7 +5,6 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -130,37 +129,77 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div><!-- /.card -->
 
-			<div class="small-box bg-warning">
-              <div class="inner">
-                <h3 th:text="${estadisticasUsuario}"></h3>
-
-                <p>Usuarios Registrados</p>
+          <section class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-6">
+                  <!-- small box -->
+                  <div class="small-box bg-warning">
+                    <div class="inner">
+                      <h3 th:text="${estadisticasUsuario}"></h3>
+      
+                      <p>Usuarios Registrados</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fas fa-user-plus"></i>
+                    </div>
+                    <a href="/usuarios" class="small-box-footer">
+                      Ir a Usuarios <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <!-- small box -->
+                  <div class="small-box bg-info">
+                    <div class="inner">
+                      <h3 th:text="${estadisticasEvento}"></h3>
+      
+                      <p>Eventos Creados</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <a href="/eventos" class="small-box-footer">
+                      Ir a eventos <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                  </div>
+                </div>
+                </div>
+                <!-- ./col -->
+                </div>
               </div>
-              <div class="icon">
-                <i class="fas fa-user-plus"></i>
-              </div>
-              <a href="/usuarios" class="small-box-footer">
-                Ir a Usuarios <i class="fas fa-arrow-circle-right"></i>
-              </a>
             </div>
-          </div>
-          
-          <div class="small-box bg-info">
-              <div class="inner">
-                <h3 th:text="${estadisticasEvento}"></h3>
+          </section>
 
-                <p>Eventos Creados</p>
+          <section class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- AREA CHART -->
+                  <div class="card card-primary">
+                    <div class="card-header">
+                      <h3 class="card-title">Eventos que terminan este Mes</h3>
+      
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="chart">
+                        <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                      </div>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <!-- /.col (RIGHT) -->
               </div>
-              <div class="icon">
-                <i class="fas fa-calendar-week"></i>
-              </div>
-              <a href="/eventos" class="small-box-footer">
-                Ir a eventos <i class="fas fa-arrow-circle-right"></i>
-              </a>
-            </div>
-          </div>
-
-
+              <!-- /.row -->
+            </div><!-- /.container-fluid -->
+          </section>
 
           </div>
           <!-- /.col-md-6 -->
@@ -190,5 +229,78 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/dist/js/adminlte.min.js"></script>
+<script src="../../plugins/chart.js/Chart.min.js"></script>
+
+<script th:inline="javascript">
+  /*<![CDATA[*/
+  var data = [[${estadisticasEventosHoy}]];
+  /*]]>*/
+  var dataX = [];
+  var dataY = [];
+
+  var date = new Date();
+
+  for(key in data){
+    dataX.push(key);
+    dataY.push(data[key]);
+  }
+  $(function () {
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+
+    //--------------
+    //- AREA CHART -
+    //--------------
+
+    // Get context with jQuery - using jQuery's .get() method.
+    var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+
+    var areaChartData = {
+      labels  : dataX,
+      datasets: [
+        {
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : true,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : dataY
+        },
+      ]
+    }
+
+    var areaChartOptions = {
+      maintainAspectRatio : false,
+      responsive : true,
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          gridLines : {
+            display : false,
+          }
+        }],
+        yAxes: [{
+          gridLines : {
+            display : false,
+          }
+        }]
+      }
+    }
+
+    // This will get the first returned node in the jQuery collection.
+    new Chart(areaChartCanvas, {
+      type: 'line',
+      data: areaChartData,
+      options: areaChartOptions
+    })
+  });
+</script>
+
 </body>
 </html>

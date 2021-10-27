@@ -42,24 +42,6 @@ window.addEventListener("load", () => {
         checkInputs();
     }
 
-    //Verificar password
-    let password = txtPassword.value;
-    if(password.length>4 &&password.length<20){
-        lblPassword.innerText = "✔️";
-        Comprobaciones.password=true;
-        checkInputs();
-    }
-    else if (password.length<5){
-        lblPassword.innerText = "❌¡Introduce una contraseña mayor a 4 digitos!❌";
-        Comprobaciones.password=false;
-        checkInputs();
-    }
-    else{
-        lblPassword.innerText = "❌¡Introduce una contraseña menor a 20 digitos!❌";
-        Comprobaciones.password=false;
-        checkInputs();
-    }
-
     //Verificar Email
     let email = txtEmail.value;
     if(email.length<50 && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
