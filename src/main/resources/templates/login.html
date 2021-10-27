@@ -20,13 +20,15 @@
     <a href="/login"><b>MyEvents</b>App</a>
   </div>
   <!-- /.login-logo -->
+  <div class="alert alert-danger" th:if="${param.error}">❌Nombre de usuario o contraseña incorrectos.</div>
+    <div class="alert alert-info" th:if="${param.logout}">ℹ️¡Has cerrado sesion!</div>
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Entra al CMS 💻</p>
 
       <form action="/login" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Usuario">
+          <input type="text" class="form-control" placeholder="Usuario" name="username">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user-friends"></span>
@@ -34,7 +36,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Contraseña" id="txtPass">
+          <input type="password" class="form-control" placeholder="Contraseña" id="txtPass" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>

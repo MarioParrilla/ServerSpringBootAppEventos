@@ -5,6 +5,7 @@ import com.marioparrillamaroto.serverEventos.entity.InfoMessage;
 import com.marioparrillamaroto.serverEventos.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +39,7 @@ public class ControladorUsuario {
 		try {
 			Usuario user = new Usuario();
 			user.setUsername(username);
-			user.setPassword(password);
+			user.setPassword(new BCryptPasswordEncoder().encode(password));
 			user.setEmail(email);
 			user.setPhonenumber(phonenumber);
 			user.setEnabled(true);
@@ -77,7 +78,7 @@ public class ControladorUsuario {
 			Usuario user = new Usuario();
 			user.setUserID(userid);
 			user.setUsername(username);
-			user.setPassword(password);
+			user.setPassword(new BCryptPasswordEncoder().encode(password));
 			user.setEmail(email);
 			user.setPhonenumber(phonenumber);
 			user.setEnabled(enabled);
