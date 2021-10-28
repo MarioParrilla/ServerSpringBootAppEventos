@@ -27,27 +27,27 @@ public class ControladorUsuarioAPI {
 	//Buscar Usuarios
 	@GetMapping("/usuario")
 	public ResponseEntity<Usuario> getUsuarios(){
-		return new ResponseEntity( userRepository.findAll(), HttpStatus.FOUND);
+		return new ResponseEntity( userRepository.findAll(), HttpStatus.OK);
 	}
 	
 	//Buscar Usuario
 	@GetMapping("/usuario/{userID}")
 	public ResponseEntity<Usuario> getUsuario(@PathVariable("userID") Long userID){
-		return new ResponseEntity( userRepository.findById(userID).orElse(null), HttpStatus.FOUND);
+		return new ResponseEntity( userRepository.findById(userID).orElse(null), HttpStatus.OK);
 	}
 	
 	//Guardar Usuario
 	@PostMapping("/usuario")
 	public ResponseEntity<Usuario> guardarUsuario(@RequestBody Usuario user) {
 		userRepository.save(user);
-		return new ResponseEntity(userRepository.findById(user.getUserID()).orElse(null),HttpStatus.CREATED);
+		return new ResponseEntity(userRepository.findById(user.getUserID()).orElse(null),HttpStatus.OK);
 	}
 	
 	//Borrar Usuario
 	@DeleteMapping("/usuario/{userID}")
 	public ResponseEntity<Usuario> eliminarUsuario(@PathVariable("userID") Long userID) {
 		userRepository.deleteById(userID);
-		return new ResponseEntity(null, HttpStatus.ACCEPTED);
+		return new ResponseEntity(null, HttpStatus.OK);
 	}
 	
 	//Modificar Usuario
