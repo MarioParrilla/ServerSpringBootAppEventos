@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         .defaultSuccessUrl("/menu", true).permitAll()
         .and().logout().logoutUrl("/cerrarSesion").permitAll();
 
-        http.exceptionHandling().accessDeniedPage("/noAcceso");
+        http.exceptionHandling().accessDeniedPage("/login?noAcceso");
     }
 
 }

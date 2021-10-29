@@ -21,6 +21,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="alert alert-danger" th:if="${param.error}">❌Nombre de usuario o contraseña incorrectos.</div>
+  <div class="alert alert-danger" th:if="${param.noAcceso}">🚫¡No tienes acceso a esta pagina del CMS!🚫</div>
     <div class="alert alert-info" th:if="${param.logout}">ℹ️¡Has cerrado sesion!</div>
   <div class="card">
     <div class="card-body login-card-body">

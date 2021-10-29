@@ -84,9 +84,4 @@ public class ControladorIndexFull {
 	public String cerrarSesion(){
 		return "redirect:/login";
 	}
-
-	@GetMapping("/noAcceso")
-	public String noAcceso(){
-		return "noAcceso";
-	}
 }
