@@ -245,17 +245,35 @@ let checkTema = () => {
 let checkInicio = () => {
     let textInicio = txtInicio.value;
     let textFin = txtFin.value;
-    if(textInicio.length>0 && !(new Date(textFin) < new Date(textInicio))){
-        lblInicio.innerText = "✔️";
-        Comprobaciones.inicio=true;
-        checkInputs();
-    }
-    else if (new Date(textFin) < new Date(textInicio)) {
-        lblInicio.innerText = "❌¡Elige una fecha de inicio que sea antes de fin!❌";
-        Comprobaciones.inicio=false;
-        checkInputs();
-    }
-    else{
+    if(textInicio.length>0){
+        if (new Date(textInicio)>=new Date()) {
+            if(new Date(textInicio).getTime()>new Date().getTime()){
+                if(textInicio.length>0 ){
+                    lblInicio.innerText = "✔️";
+                    Comprobaciones.inicio=true;
+                    checkInputs();
+                }
+                else{
+                    lblInicio.innerText = "❌¡Elige una fecha de inicio!❌";
+                    Comprobaciones.inicio=false;
+                    checkInputs();
+                }
+            }else{
+                lblInicio.innerText = "❌¡Elige una hora de inicio que no sea una hora ya pasada!❌";
+                Comprobaciones.inicio=false;
+                checkInputs();
+            }
+            if (new Date(textFin) < new Date(textInicio)) {
+                lblFin.innerText = "❌¡Elige una fecha de fin que sea despues de la hora de inicio!❌";
+                Comprobaciones.fin=false;
+                checkInputs();
+            }
+        }else{
+            lblInicio.innerText = "❌¡Elige una fecha de inicio que no sea una fecha pasada!❌";
+            Comprobaciones.inicio=false;
+            checkInputs();
+        }
+    }else{
         lblInicio.innerText = "❌¡Elige una fecha de inicio!❌";
         Comprobaciones.inicio=false;
         checkInputs();
@@ -264,18 +282,24 @@ let checkInicio = () => {
 let checkFin = () => {
     let textFin2 = txtFin.value;
     let textInicio2 = txtInicio.value;
-    if(textFin2.length>0 && !(new Date(textFin2) < new Date(textInicio2))){
-        lblFin.innerText = "✔️";
-        Comprobaciones.fin=true;
-        checkInputs();
-    }
-    else if (new Date(textFin2) < new Date(textInicio2)) {
-        lblFin.innerText = "❌¡Elige una fecha de fin que sea después de inicio!❌";
-        Comprobaciones.fin=false;
-        checkInputs();
-    }
-    else{
-        lblFin.innerText = "❌¡Elige una fecha de fin!❌";
+    if (new Date(textInicio2).getTime()<new Date(textFin2).getTime()) {
+        if(textFin2.length>0 && !(new Date(textFin2) < new Date(textInicio2))){
+            lblFin.innerText = "✔️";
+            Comprobaciones.fin=true;
+            checkInputs();
+        }
+        else if (new Date(textFin2) < new Date(textInicio2)) {
+            lblFin.innerText = "❌¡Elige una fecha de fin que sea después de inicio!❌";
+            Comprobaciones.fin=false;
+            checkInputs();
+        }
+        else{
+            lblFin.innerText = "❌¡Elige una fecha de fin!❌";
+            Comprobaciones.fin=false;
+            checkInputs();
+        }
+    }else{
+        lblFin.innerText = "❌¡Elige una hora de fin que sea mayor a la hora de inicio!❌";
         Comprobaciones.fin=false;
         checkInputs();
     }
