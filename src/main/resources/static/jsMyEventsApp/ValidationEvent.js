@@ -58,146 +58,24 @@ window.addEventListener("load", () =>{
     if (radioCoordinates.checked) divCoordenadas.style.display = "block";
     else if (radioVideomeeting.checked)divVideomeeting.style.display = "block";
 
-    let usrOwner = txtUserOwner.value;
-    if(usrOwner.length<20 && usrOwner.length>0){
-        lblUserOwner.innerText = "✔️";
-        Comprobaciones.userOwner=true;
-        checkInputs();
-    }else if(usrOwner.length<1){
-        lblUserOwner.innerText = "❌¡Introduce un ID!❌";
-        Comprobaciones.userOwner=false;
-        checkInputs();
-    }
-    else{
-        lblUserOwner.innerText = "❌¡Introduce un ID menor a 20 digitos!❌";
-        Comprobaciones.userOwner=false;
-        checkInputs();
-    }
-
-    let usrSummoner = txtUserSummoner.value;
-    if(usrSummoner.length<20 && usrSummoner.length>0){
-        lblUserSummoner.innerText = "✔️";
-        Comprobaciones.userSummoner=true;
-        checkInputs();
-    }else if(usrSummoner.length<1){
-        lblUserSummoner.innerText = "❌¡Introduce un ID!❌";
-        Comprobaciones.userSummoner=false;
-        checkInputs();
-    }
-    else{
-        lblUserSummoner.innerText = "❌¡Introduce un ID menor a 20 digitos!❌";
-        Comprobaciones.userSummoner=false;
-        checkInputs();
-    }
-
-    let textEventName = txtEventName.value;
-    if(textEventName.length<15 && textEventName.length>3){
-        lblEventName.innerText = "✔️";
-        Comprobaciones.eventName=true;
-        checkInputs();
-    }else if(textEventName.length<4){
-        lblEventName.innerText = "❌¡Introduce un nombre de evento mayor a 4 digitos!❌";
-        Comprobaciones.eventName=false;
-        checkInputs();
-    }
-    else{
-        lblEventName.innerText = "❌¡Introduce un nombre de evento menor a 15 digitos!❌";
-        Comprobaciones.eventName=false;
-        checkInputs();
-    }
-
-    let textTema = txtTema.value;
-    if(textTema.length<15 && textTema.length>3){
-        lblTema.innerText = "✔️";
-        Comprobaciones.tema=true;
-        checkInputs();
-    }else if(textTema.length<4){
-        lblTema.innerText = "❌¡Introduce un nombre de evento mayor a 4 digitos!❌";
-        Comprobaciones.tema=false;
-        checkInputs();
-    }
-    else{
-        lblTema.innerText = "❌¡Introduce un nombre de evento menor a 15 digitos!❌";
-        Comprobaciones.tema=false;
-        checkInputs();
-    }
-
-    let textInicio = txtInicio.value;
-    let textFin = txtFin.value;
-    if(textInicio.length>0 && !(new Date(textFin) < new Date(textInicio))){
-        lblInicio.innerText = "✔️";
-        Comprobaciones.inicio=true;
-        checkInputs();
-    }
-    else if (new Date(textFin) < new Date(textInicio)) {
-        lblInicio.innerText = "❌¡Elige una fecha de inicio que sea antes de fin!❌";
-        Comprobaciones.inicio=false;
-        checkInputs();
-    }
-    else{
-        lblInicio.innerText = "❌¡Elige una fecha de inicio!❌";
-        Comprobaciones.inicio=false;
-        checkInputs();
-    }
-
-    let textFin2 = txtFin.value;
-    let textInicio2 = txtInicio.value;
-    if(textFin2.length>0 && !(new Date(textFin2) < new Date(textInicio2))){
-        lblFin.innerText = "✔️";
-        Comprobaciones.fin=true;
-        checkInputs();
-    }
-    else if (new Date(textFin2) < new Date(textInicio2)) {
-        lblFin.innerText = "❌¡Elige una fecha de fin que sea después de inicio!❌";
-        Comprobaciones.fin=false;
-        checkInputs();
-    }
-    else{
-        lblFin.innerText = "❌¡Elige una fecha de fin!❌";
-        Comprobaciones.fin=false;
-        checkInputs();
-    }
-
     if (radioCoordinates.checked) {
-        let textCoor = txtCoordenadas.value;
-        if(textCoor.length<100 && textCoor.length>9){
-            lblCoordenadas.innerText = "✔️";
-            Comprobaciones.coordenadas=true;
-            Comprobaciones.videomeeting=true;
-            checkInputs();
-        }else if(textCoor.length<8){
-            lblCoordenadas.innerText = "❌¡Introduce unas coordenadas mayor a 9 digitos!❌";
-            Comprobaciones.coordenadas=false;
-            Comprobaciones.videomeeting=false;
-            checkInputs();
-        }
-        else{
-            lblCoordenadas.innerText = "❌¡Introduce unas coordenadas menores a 100 digitos!❌";
-            Comprobaciones.coordenadas=false;
-            Comprobaciones.videomeeting=false;
-            checkInputs();
-        }
+        txtVideomeeting.value = "";
+        Comprobaciones.coordenadas = false;
+        Comprobaciones.videomeeting = false;
+        checkRadioCoor();
     }else{
-        let textVideo = txtVideomeeting.value;
-        if(textVideo.length<100 && textVideo.length>9){
-            lblVideomeeting.innerText = "✔️";
-            Comprobaciones.coordenadas=true;
-            Comprobaciones.videomeeting=true;
-            checkInputs();
-        }else if(textVideo.length<8){
-            lblVideomeeting.innerText = "❌¡Introduce un enlace mayor a 9 digitos!❌";
-            Comprobaciones.coordenadas=false;
-            Comprobaciones.videomeeting=false;
-            checkInputs();
-        }
-        else{
-            lblVideomeeting.innerText = "❌¡Introduce un enlace menor a 100 digitos!❌";
-            Comprobaciones.coordenadas=false;
-            Comprobaciones.videomeeting=false;
-            checkInputs();
-        }
+        txtCoordenadas.value = "";
+        Comprobaciones.coordenadas = false;
+        Comprobaciones.videomeeting = false;
+        checkRadioMeeting();
     }
 
+    checkUserOwner();
+    checkUserSummoner();
+    checkEventName();
+    checkTema();
+    checkInicio();
+    checkFin();
 });
 
 radioCoordinates.addEventListener("click", () =>{
@@ -206,44 +84,7 @@ radioCoordinates.addEventListener("click", () =>{
     txtVideomeeting.value = "";
     Comprobaciones.coordenadas = false;
     Comprobaciones.videomeeting = false;
-
-    let textCoor = txtCoordenadas.value;
-    if(textCoor.length<100 && textCoor.length>9){
-        lblCoordenadas.innerText = "✔️";
-        Comprobaciones.coordenadas=true;
-        Comprobaciones.videomeeting=true;
-        checkInputs();
-    }else if(textCoor.length<8){
-        lblCoordenadas.innerText = "❌¡Introduce unas coordenadas mayor a 9 digitos!❌";
-        Comprobaciones.coordenadas=false;
-        Comprobaciones.videomeeting=false;
-        checkInputs();
-    }
-    else{
-        lblCoordenadas.innerText = "❌¡Introduce unas coordenadas menores a 100 digitos!❌";
-        Comprobaciones.coordenadas=false;
-        Comprobaciones.videomeeting=false;
-        checkInputs();
-    }
-
-    let textVideo = txtVideomeeting.value;
-    if(textVideo.length<100 && textVideo.length>9){
-        lblVideomeeting.innerText = "✔️";
-        Comprobaciones.coordenadas=true;
-        Comprobaciones.videomeeting=true;
-        checkInputs();
-    }else if(textVideo.length<8){
-        lblVideomeeting.innerText = "❌¡Introduce un enlace mayor a 9 digitos!❌";
-        Comprobaciones.coordenadas=false;
-        Comprobaciones.videomeeting=false;
-        checkInputs();
-    }
-    else{
-        lblVideomeeting.innerText = "❌¡Introduce un enlace menor a 100 digitos!❌";
-        Comprobaciones.coordenadas=false;
-        Comprobaciones.videomeeting=false;
-        checkInputs();
-    }
+    checkRadioCoor();
 });
 
 radioVideomeeting.addEventListener("click", () =>{
@@ -252,9 +93,44 @@ radioVideomeeting.addEventListener("click", () =>{
     txtCoordenadas.value = "";
     Comprobaciones.coordenadas = false;
     Comprobaciones.videomeeting = false;
+    checkRadioMeeting();
+});
 
+txtUserOwner.addEventListener("change", () =>{
+    checkUserOwner();
+});
+
+txtUserSummoner.addEventListener("change", () =>{
+    checkUserSummoner();
+});
+
+txtEventName.addEventListener("change", () =>{
+    checkEventName();
+});
+
+txtTema.addEventListener("change", () =>{
+    checkTema();
+});
+
+txtInicio.addEventListener("change", () =>{
+    checkInicio();
+});
+
+txtFin.addEventListener("change", () =>{
+    checkFin();
+});
+
+txtCoordenadas.addEventListener("change", () =>{
+    checkRadioCoor();
+});
+
+txtVideomeeting.addEventListener("change", () =>{
+    checkRadioMeeting();
+});
+
+let checkRadioCoor = () => {
     let textCoor = txtCoordenadas.value;
-    if(textCoor.length<100 && textCoor.length>9){
+    if(textCoor.length<=100 && textCoor.length>9){
         lblCoordenadas.innerText = "✔️";
         Comprobaciones.coordenadas=true;
         Comprobaciones.videomeeting=true;
@@ -271,9 +147,11 @@ radioVideomeeting.addEventListener("click", () =>{
         Comprobaciones.videomeeting=false;
         checkInputs();
     }
+};
 
+let checkRadioMeeting = () => {
     let textVideo = txtVideomeeting.value;
-    if(textVideo.length<100 && textVideo.length>9){
+    if(textVideo.length<=100 && textVideo.length>9){
         lblVideomeeting.innerText = "✔️";
         Comprobaciones.coordenadas=true;
         Comprobaciones.videomeeting=true;
@@ -290,9 +168,9 @@ radioVideomeeting.addEventListener("click", () =>{
         Comprobaciones.videomeeting=false;
         checkInputs();
     }
-});
+};
 
-txtUserOwner.addEventListener("change", () =>{
+let checkUserOwner = () => {
     let usrOwner = txtUserOwner.value;
     if(usrOwner.length<20 && usrOwner.length>0){
         lblUserOwner.innerText = "✔️";
@@ -308,9 +186,9 @@ txtUserOwner.addEventListener("change", () =>{
         Comprobaciones.userOwner=false;
         checkInputs();
     }
-});
+};
 
-txtUserSummoner.addEventListener("change", () =>{
+let checkUserSummoner = () => {
     let usrSummoner = txtUserSummoner.value;
     if(usrSummoner.length<20 && usrSummoner.length>0){
         lblUserSummoner.innerText = "✔️";
@@ -326,11 +204,11 @@ txtUserSummoner.addEventListener("change", () =>{
         Comprobaciones.userSummoner=false;
         checkInputs();
     }
-});
+};
 
-txtEventName.addEventListener("change", () =>{
+let checkEventName = () => {
     let textEventName = txtEventName.value;
-    if(textEventName.length<15 && textEventName.length>3){
+    if(textEventName.length<=15 && textEventName.length>3){
         lblEventName.innerText = "✔️";
         Comprobaciones.eventName=true;
         checkInputs();
@@ -344,11 +222,11 @@ txtEventName.addEventListener("change", () =>{
         Comprobaciones.eventName=false;
         checkInputs();
     }
-});
+};
 
-txtTema.addEventListener("change", () =>{
+let checkTema = () => {
     let textTema = txtTema.value;
-    if(textTema.length<15 && textTema.length>3){
+    if(textTema.length<=15 && textTema.length>3){
         lblTema.innerText = "✔️";
         Comprobaciones.tema=true;
         checkInputs();
@@ -362,9 +240,9 @@ txtTema.addEventListener("change", () =>{
         Comprobaciones.tema=false;
         checkInputs();
     }
-});
+};
 
-txtInicio.addEventListener("change", () =>{
+let checkInicio = () => {
     let textInicio = txtInicio.value;
     let textFin = txtFin.value;
     if(textInicio.length>0 && !(new Date(textFin) < new Date(textInicio))){
@@ -382,9 +260,8 @@ txtInicio.addEventListener("change", () =>{
         Comprobaciones.inicio=false;
         checkInputs();
     }
-});
-
-txtFin.addEventListener("change", () =>{
+};
+let checkFin = () => {
     let textFin2 = txtFin.value;
     let textInicio2 = txtInicio.value;
     if(textFin2.length>0 && !(new Date(textFin2) < new Date(textInicio2))){
@@ -402,46 +279,4 @@ txtFin.addEventListener("change", () =>{
         Comprobaciones.fin=false;
         checkInputs();
     }
-});
-
-txtCoordenadas.addEventListener("change", () =>{
-    let textCoor = txtCoordenadas.value;
-    if(textCoor.length<100 && textCoor.length>9){
-        lblCoordenadas.innerText = "✔️";
-        Comprobaciones.coordenadas=true;
-        Comprobaciones.videomeeting=true;
-        checkInputs();
-    }else if(textCoor.length<8){
-        lblCoordenadas.innerText = "❌¡Introduce unas coordenadas mayor a 9 digitos!❌";
-        Comprobaciones.coordenadas=false;
-        Comprobaciones.videomeeting=false;
-        checkInputs();
-    }
-    else{
-        lblCoordenadas.innerText = "❌¡Introduce unas coordenadas menores a 100 digitos!❌";
-        Comprobaciones.coordenadas=false;
-        Comprobaciones.videomeeting=false;
-        checkInputs();
-    }
-});
-
-txtVideomeeting.addEventListener("change", () =>{
-    let textVideo = txtVideomeeting.value;
-    if(textVideo.length<100 && textVideo.length>9){
-        lblVideomeeting.innerText = "✔️";
-        Comprobaciones.coordenadas=true;
-        Comprobaciones.videomeeting=true;
-        checkInputs();
-    }else if(textVideo.length<8){
-        lblVideomeeting.innerText = "❌¡Introduce un enlace mayor a 9 digitos!❌";
-        Comprobaciones.coordenadas=false;
-        Comprobaciones.videomeeting=false;
-        checkInputs();
-    }
-    else{
-        lblVideomeeting.innerText = "❌¡Introduce un enlace menor a 100 digitos!❌";
-        Comprobaciones.coordenadas=false;
-        Comprobaciones.videomeeting=false;
-        checkInputs();
-    }
-});
+};

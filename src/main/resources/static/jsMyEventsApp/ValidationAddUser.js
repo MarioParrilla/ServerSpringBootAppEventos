@@ -25,9 +25,40 @@ let Comprobaciones = {
 };
 
 btnSubmit.disabled = true;
-
+window.addEventListener("load", () =>{
+    checkUsername();
+    checkPassword();
+    checkrPassword();
+    checkEmail();
+    checkPhoneNumber();
+});
 
 txtUsername.addEventListener("change", () =>{
+    checkUsername();
+});
+
+txtPassword.addEventListener("change", () =>{
+    checkPassword();
+});
+
+txtrPassword.addEventListener("change", () => {
+    checkrPassword();
+});
+
+txtEmail.addEventListener("change", () =>{
+    checkEmail();
+});
+
+txtPhonenumber.addEventListener("change", () =>{
+    checkPhoneNumber();
+});
+
+let checkInputs = () => {
+    if (Comprobaciones.username===true && Comprobaciones.password===true && Comprobaciones.rPassword===true && Comprobaciones.email===true && Comprobaciones.phonenumber===true) btnSubmit.disabled = false;
+    else btnSubmit.disabled = true;
+};
+
+let checkUsername = () => {
     let text = txtUsername.value;
     if(text.length<15 && text.length>1){
         lblUsername.innerText = "✔️";
@@ -43,10 +74,9 @@ txtUsername.addEventListener("change", () =>{
         Comprobaciones.username=false;
         checkInputs();
     }
+};
 
-});
-
-txtPassword.addEventListener("change", () =>{
+let checkPassword = () => {
     let password = txtPassword.value;
     let rPassword = txtrPassword.value;
     if(password.length>4 &&password.length<20 && rPassword===password){
@@ -73,9 +103,9 @@ txtPassword.addEventListener("change", () =>{
         Comprobaciones.password=false;
         checkInputs();
     }
-});
+};
 
-txtrPassword.addEventListener("change", () => {
+let checkrPassword = () => {
     let rPassword = txtrPassword.value;
     let password = txtPassword.value;
     if(password.length>4 && rPassword.length<20 && rPassword===password){
@@ -100,9 +130,9 @@ txtrPassword.addEventListener("change", () => {
         Comprobaciones.rPassword=false;
         checkInputs();
     }
-});
+};
 
-txtEmail.addEventListener("change", () =>{
+let checkEmail = () => {
     let email = txtEmail.value;
     if(email.length<50 && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
         lblEmail.innerText = "✔️";
@@ -118,9 +148,9 @@ txtEmail.addEventListener("change", () =>{
         Comprobaciones.email=false;
         checkInputs();
     }
-});
+};
 
-txtPhonenumber.addEventListener("change", () =>{
+let checkPhoneNumber = () => {
     let phonenumber = txtPhonenumber.value;
     if(phonenumber.length<10 && /^\+?(6\d{2}|7[1-9]\d{1})\d{6}$/.test(phonenumber)){
         lblPhonenumber.innerText = "✔️";
@@ -136,9 +166,4 @@ txtPhonenumber.addEventListener("change", () =>{
         Comprobaciones.phonenumber=false;
         checkInputs();
     }
-});
-
-let checkInputs = () => {
-    if (Comprobaciones.username===true && Comprobaciones.password===true && Comprobaciones.rPassword===true && Comprobaciones.email===true && Comprobaciones.phonenumber===true) btnSubmit.disabled = false;
-    else btnSubmit.disabled = true;
 };

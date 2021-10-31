@@ -167,7 +167,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <label for="videomeeting">Enlace Videomeeting</label><span id="lblVideomeeting"></span>
                       <input type="text" name="videomeeting" class="form-control" id="videomeeting" placeholder="Enlace Videomeeting" th:value="${evento.getVideomeeting()}">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" th:if="${evento.getEventPreference() == true}">
+                      <label for="eventpreference">Preferencia del Evento</label><br><hr>
+                      Presencial<input type="radio" name="eventpreference" class="form-control" value="false" id="eventpreferencecoordinates"/><hr>
+                      Videomeeting<input type="radio" name="eventpreference" class="form-control" value="true" id="eventpreferencevideomeeting" checked/><hr>
+                    </div>
+                    <div class="form-group" th:unless="${evento.getEventPreference() == true}">
                       <label for="eventpreference">Preferencia del Evento</label><br><hr>
                       Presencial<input type="radio" name="eventpreference" class="form-control" value="false" id="eventpreferencecoordinates" checked/><hr>
                       Videomeeting<input type="radio" name="eventpreference" class="form-control" value="true" id="eventpreferencevideomeeting"/><hr>
