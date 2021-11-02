@@ -84,4 +84,9 @@ public class ControladorIndexFull {
 	public String cerrarSesion(){
 		return "redirect:/login";
 	}
+
+	@GetMapping("/soporte")
+	public String soporte(){
+		return "soporte";
+	}
 }
