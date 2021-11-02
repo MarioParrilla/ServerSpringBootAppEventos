@@ -149,7 +149,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>Telefono</th>
                     <th>Acceso</th>
                     <th>Es Admin</th>
-                    <th>Acciones</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -165,7 +166,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <input type="hidden" name="userid" th:value="${usuario.getUserID()}">
                     		<input type="submit" name="botonModificar" value="Editar">
                     	</form>
-                    	<form method="post" action=/eliminarUsuario>
+                    </td>
+                    <td>
+                      <form method="post" action=/eliminarUsuario>
                         <input type="hidden" name="userid" th:value="${usuario.getUserID()}">
                     		<input type="submit" name="botonEliminar" value="Eliminar">
                     	</form>
@@ -180,7 +183,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>Telefono</th>
                     <th>Acceso</th>
                     <th>Es Admin</th>
-                    <th>Acciones</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                   </tr>
                   </tfoot>
                 </table>		

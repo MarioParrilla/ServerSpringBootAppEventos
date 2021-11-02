@@ -52,8 +52,8 @@ public class ControladorUsuarioAPI {
 	
 	//Modificar Usuario
 	@PutMapping("/usuario/{userID}")
-	public String modificarUsuario(@RequestBody Usuario user) {
+	public ResponseEntity<Usuario> modificarUsuario(@RequestBody Usuario user) {
 		userRepository.save(user);
-		return "usuario";
+		return new ResponseEntity(userRepository.findById(user.getUserID()).orElse(null),HttpStatus.OK);
 	}
 }

@@ -269,7 +269,7 @@ let checkInicio = () => {
                 checkInputs();
             }
         }else{
-            lblInicio.innerText = "❌¡Elige una fecha de inicio que no sea una fecha pasada!❌";
+            lblInicio.innerText = "❌¡Elige una fecha de inicio que no sea una fecha pasada o que no sea a esta hora!❌";
             Comprobaciones.inicio=false;
             checkInputs();
         }
