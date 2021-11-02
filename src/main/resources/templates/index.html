@@ -191,8 +191,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <div class="card-body">
                   <div class="chart">
-                    <canvas id="areaChart"
-                      style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     <h4 id="infoChart">📅¡No hay eventos disponibles!📅</h4>
                   </div>
                 </div>
@@ -243,72 +242,68 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     var dataX = [];
     var dataY = [];
-    let noEmpty = false;
+    let noEmpty = 0;
 
     var date = new Date();
 
-    for (key in data) {
-      if (data[key] == 0) {
-        document.getElementById("areaChart").style.display = "none";
-        document.getElementById("infoChart").style.display = "block";
-        noEmpty = false;
-      } else {
-        document.getElementById("areaChart").style.display = "block";
-        document.getElementById("infoChart").style.display = "none";
-        noEmpty = true;
-      }
-    }
+    for (key in data) if (data[key] != 0) noEmpty = 1;
 
     for (key in data) {
       dataX.push(key);
       dataY.push(data[key]);
     }
-    $(function () {
-      if (noEmpty) {
-        var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
-        var areaChartData = {
-          labels: dataX,
-          datasets: [{
-            backgroundColor: 'rgba(60,141,188,0.9)',
-            borderColor: 'rgba(60,141,188,0.8)',
-            pointRadius: true,
-            pointColor: '#3b8bba',
-            pointStrokeColor: 'rgba(60,141,188,1)',
-            pointHighlightFill: '#fff',
-            pointHighlightStroke: 'rgba(60,141,188,1)',
-            data: dataY
-          }, ]
-        }
+    document.getElementById("areaChart").style.display = "none";
+    document.getElementById("infoChart").style.display = "block";
 
-        var areaChartOptions = {
-          maintainAspectRatio: false,
-          responsive: true,
-          legend: {
-            display: false
-          },
-          scales: {
-            xAxes: [{
-              gridLines: {
-                display: false,
-              }
-            }],
-            yAxes: [{
-              gridLines: {
-                display: false,
-              }
-            }]
-          }
-        }
+    if (noEmpty>0) {
+      document.getElementById("areaChart").style.display = "block";
+      document.getElementById("infoChart").style.display = "none";
+      $(function () {
+      var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
-        // This will get the first returned node in the jQuery collection.
-        new Chart(areaChartCanvas, {
-          type: 'line',
-          data: areaChartData,
-          options: areaChartOptions
-        });
+      var areaChartData = {
+      labels: dataX,
+      datasets: [{
+      backgroundColor: 'rgba(60,141,188,0.9)',
+      borderColor: 'rgba(60,141,188,0.8)',
+      pointRadius: true,
+      pointColor: '#3b8bba',
+      pointStrokeColor: 'rgba(60,141,188,1)',
+      pointHighlightFill: '#fff',
+      pointHighlightStroke: 'rgba(60,141,188,1)',
+      data: dataY
+      }, ]
       }
-    });
+
+      var areaChartOptions = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+      display: false
+      },
+      scales: {
+      xAxes: [{
+      gridLines: {
+      display: false,
+      }
+      }],
+      yAxes: [{
+      gridLines: {
+      display: false,
+      }
+      }]
+      }
+      }
+
+      // This will get the first returned node in the jQuery collection.
+      new Chart(areaChartCanvas, {
+      type: 'line',
+      data: areaChartData,
+      options: areaChartOptions
+      });
+      });
+    }
   </script>
 
 </body>
