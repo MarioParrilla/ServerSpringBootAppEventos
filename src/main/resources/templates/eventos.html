@@ -137,75 +137,71 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-				<table id="tablaUsuarios" class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Tema</th>
-                    <th>Inicio</th>
-                    <th>Final</th>
-                    <th>User Owner</th>
-                    <th>User Summoner</th>
-                    <th>Preferencia</th>
-                    <th>Coordenadas</th>
-                    <th>Enlace</th>
-                    <th>Disponible</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr th:each="evento : ${eventos}">
-                    <td th:text="${evento.getEventID()}"></td>
-                    <td th:text="${evento.getEventName()}"></td>
-                    <td th:text="${evento.getTema()}"></td>
-                    <td th:text="${evento.getStartTime()}"></td>
-                    <td th:text="${evento.getEndTime()}"></td>
-                    <td th:text="${evento.getUserOwner().getUsername()}"></td>
-                    <td th:if="${evento.getUserSummoner() == null}" >Sin Citador</td>
-                    <td th:unless="${evento.getUserSummoner() == null}" th:text="${evento.getUserSummoner().getUsername()}"></td>
-                    <td th:text="${evento.getEventPreference()}"></td>
-                    <td th:text="${evento.getCoordinates()}"></td>
-                    <td th:text="${evento.getVideomeeting()}"></td>
-                    <td th:text="${evento.getAvailable()}"></td>
-                    <td>
-                      <form method="get" action=/editarEvento th:action="@{/editarEvento?eventid=${evento.getEventID()}}">
-                        <input type="hidden" name="eventid" th:value="${evento.getEventID()}">
-                        <input type="submit" name="botonModificar" value="Editar">
-                      </form>
-                    </td>
-                    <td>
-                      <form method="post" action=/eliminarEvento>
-                        <input type="hidden" name="eventid" th:value="${evento.getEventID()}">
-                        <input type="submit" name="botonEliminar" value="Eliminar">
-                      </form>
-                    </td>
-                  </tr>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Tema</th>
-                    <th>Inicio</th>
-                    <th>Final</th>
-                    <th>User Owner</th>
-                    <th>User Summoner</th>
-                    <th>Preferencia</th>
-                    <th>Coordenadas</th>
-                    <th>Enlace</th>
-                    <th>Disponible</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                  </tr>
-                  </tfoot>
-                </table>		
-              </div>
-            </div><!-- /.card -->
+        <table th:unless="${eventos.empty}" id="tablaUsuarios" class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Tema</th>
+            <th>Inicio</th>
+            <th>Final</th>
+            <th>User Owner</th>
+            <th>User Summoner</th>
+            <th>Preferencia</th>
+            <th>Coordenadas</th>
+            <th>Enlace</th>
+            <th>Disponible</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="evento : ${eventos}">
+            <td th:text="${evento.getEventID()}"></td>
+            <td th:text="${evento.getEventName()}"></td>
+            <td th:text="${evento.getTema()}"></td>
+            <td th:text="${evento.getStartTime()}"></td>
+            <td th:text="${evento.getEndTime()}"></td>
+            <td th:text="${evento.getUserOwner().getUsername()}"></td>
+            <td th:if="${evento.getUserSummoner() == null}" >Sin Citador</td>
+            <td th:unless="${evento.getUserSummoner() == null}" th:text="${evento.getUserSummoner().getUsername()}"></td>
+            <td th:text="${evento.getEventPreference()}"></td>
+            <td th:text="${evento.getCoordinates()}"></td>
+            <td th:text="${evento.getVideomeeting()}"></td>
+            <td th:text="${evento.getAvailable()}"></td>
+            <td>
+              <form method="get" action=/editarEvento th:action="@{/editarEvento?eventid=${evento.getEventID()}}">
+                <input type="hidden" name="eventid" th:value="${evento.getEventID()}">
+                <input type="submit" name="botonModificar" value="Editar">
+              </form>
+            </td>
+            <td>
+              <form method="post" action=/eliminarEvento>
+                <input type="hidden" name="eventid" th:value="${evento.getEventID()}">
+                <input type="submit" name="botonEliminar" value="Eliminar">
+              </form>
+            </td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Tema</th>
+            <th>Inicio</th>
+            <th>Final</th>
+            <th>User Owner</th>
+            <th>User Summoner</th>
+            <th>Preferencia</th>
+            <th>Coordenadas</th>
+            <th>Enlace</th>
+            <th>Disponible</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+          </tfoot>
+        </table>
+        <h4 th:if="${eventos.empty}">📅¡No Hay eventos disponibles!📅</h4>
           </div>
           <!-- /.col-md-6 -->
       </div><!-- /.container-fluid -->
@@ -254,11 +250,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     $('#tablaUsuarios').DataTable({
       "paging": true,
       "lengthChange": false,
-      "searching": false,
+      "searching": true,
       "ordering": true,
       "info": true,
-      "autoWidth": false,
-      "responsive": false,
+      "autoWidth": true,
+      "responsive": true,
       "oLanguage": {
         "oPaginate": {
         "sFirst": "Primera Pagina",
