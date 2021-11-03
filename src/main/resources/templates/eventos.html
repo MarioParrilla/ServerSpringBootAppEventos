@@ -20,6 +20,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     .content-wrapper{
       background-color: white;
     }
+    #tablaEventos_filter{
+      text-align: right;
+    }
   </style>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -137,7 +140,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <table th:unless="${eventos.empty}" id="tablaUsuarios" class="table table-bordered table-hover">
+        <table th:unless="${eventos.empty}" id="tablaEventos" class="table table-bordered table-hover">
           <thead>
           <tr>
             <th>ID</th>
@@ -247,7 +250,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="../../dist/js/demo.js"></script>
 <script>
   $(function () {
-    $('#tablaUsuarios').DataTable({
+    $('#tablaEventos').DataTable({
       "paging": true,
       "lengthChange": false,
       "searching": true,
