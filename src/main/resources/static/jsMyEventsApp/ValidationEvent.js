@@ -22,8 +22,9 @@ let lblVideomeeting = document.getElementById("lblVideomeeting");
 let divCoordenadas = document.getElementById("coorDiv");
 let divVideomeeting = document.getElementById("videoDiv");
 
+
 lblUserOwner.style.color = "red";
-lblUserSummoner.style.color = "red";
+if(lblUserSummoner!=null) lblUserSummoner.style.color = "red";
 lblEventName.style.color = "red";
 lblTema.style.color = "red";
 lblInicio.style.color = "red";
@@ -42,6 +43,8 @@ let Comprobaciones = {
     videomeeting: false,
 };
 
+if(lblUserSummoner!=null) Comprobaciones.userSummoner = true;
+
 let checkInputs = () => {
     if (Comprobaciones.userOwner===true && Comprobaciones.userSummoner===true && Comprobaciones.eventName===true && Comprobaciones.tema===true && Comprobaciones.inicio===true
         && Comprobaciones.fin===true && Comprobaciones.coordenadas===true && Comprobaciones.videomeeting===true) btnSubmit.disabled = false;
@@ -50,83 +53,6 @@ let checkInputs = () => {
 
 btnSubmit.disabled = true;
 
-window.addEventListener("load", () =>{
-    
-    divCoordenadas.style.display = "none";
-    divVideomeeting.style.display = "none";
-
-    if (radioCoordinates.checked) divCoordenadas.style.display = "block";
-    else if (radioVideomeeting.checked)divVideomeeting.style.display = "block";
-
-    if (radioCoordinates.checked) {
-        txtVideomeeting.value = "";
-        Comprobaciones.coordenadas = false;
-        Comprobaciones.videomeeting = false;
-        checkRadioCoor();
-    }else{
-        txtCoordenadas.value = "";
-        Comprobaciones.coordenadas = false;
-        Comprobaciones.videomeeting = false;
-        checkRadioMeeting();
-    }
-
-    checkUserOwner();
-    checkUserSummoner();
-    checkEventName();
-    checkTema();
-    checkInicio();
-    checkFin();
-});
-
-radioCoordinates.addEventListener("click", () =>{
-    divVideomeeting.style.display = "none";
-    divCoordenadas.style.display = "block";
-    txtVideomeeting.value = "";
-    Comprobaciones.coordenadas = false;
-    Comprobaciones.videomeeting = false;
-    checkRadioCoor();
-});
-
-radioVideomeeting.addEventListener("click", () =>{
-    divVideomeeting.style.display = "block";
-    divCoordenadas.style.display = "none";
-    txtCoordenadas.value = "";
-    Comprobaciones.coordenadas = false;
-    Comprobaciones.videomeeting = false;
-    checkRadioMeeting();
-});
-
-txtUserOwner.addEventListener("change", () =>{
-    checkUserOwner();
-});
-
-txtUserSummoner.addEventListener("change", () =>{
-    checkUserSummoner();
-});
-
-txtEventName.addEventListener("change", () =>{
-    checkEventName();
-});
-
-txtTema.addEventListener("change", () =>{
-    checkTema();
-});
-
-txtInicio.addEventListener("change", () =>{
-    checkInicio();
-});
-
-txtFin.addEventListener("change", () =>{
-    checkFin();
-});
-
-txtCoordenadas.addEventListener("change", () =>{
-    checkRadioCoor();
-});
-
-txtVideomeeting.addEventListener("change", () =>{
-    checkRadioMeeting();
-});
 
 let checkRadioCoor = () => {
     let textCoor = txtCoordenadas.value;
@@ -187,32 +113,34 @@ let checkUserOwner = () => {
         checkInputs();
     }
 };
-
-let checkUserSummoner = () => {
-    let usrSummoner = txtUserSummoner.value;
-    let usrOwner = txtUserOwner.value;
-    if(usrSummoner.length<20 && usrSummoner.length>0){
-        lblUserSummoner.innerText = "✔️";
-        Comprobaciones.userSummoner=true;
-        checkInputs();
-    }else if(usrSummoner.length<1){
-        lblUserSummoner.innerText = "❌¡Introduce un ID!❌";
-        Comprobaciones.userSummoner=false;
-        checkInputs();
-    }else if(usrSummoner===usrOwner){
-        lblUserSummoner.innerText = "❌¡Introduce un ID diferente al dueño!❌";
-        Comprobaciones.userSummoner=false;
-    }
-    else{
-        lblUserSummoner.innerText = "❌¡Introduce un ID menor a 20 digitos!❌";
-        Comprobaciones.userSummoner=false;
-        checkInputs();
-    }
-};
+let checkUserSummoner;
+if(lblUserSummoner!=null){
+    checkUserSummoner = () => {
+        let usrSummoner = txtUserSummoner.value;
+        let usrOwner = txtUserOwner.value;
+        if(usrSummoner.length<20 && usrSummoner.length>0){
+            lblUserSummoner.innerText = "✔️";
+            Comprobaciones.userSummoner=true;
+            checkInputs();
+        }else if(usrSummoner.length<1){
+            lblUserSummoner.innerText = "❌¡Introduce un ID!❌";
+            Comprobaciones.userSummoner=false;
+            checkInputs();
+        }else if(usrSummoner===usrOwner){
+            lblUserSummoner.innerText = "❌¡Introduce un ID diferente al dueño!❌";
+            Comprobaciones.userSummoner=false;
+        }
+        else{
+            lblUserSummoner.innerText = "❌¡Introduce un ID menor a 20 digitos!❌";
+            Comprobaciones.userSummoner=false;
+            checkInputs();
+        }
+    };
+}
 
 let checkEventName = () => {
     let textEventName = txtEventName.value;
-    if(textEventName.length<=15 && textEventName.length>3){
+    if(textEventName.length<=30 && textEventName.length>3){
         lblEventName.innerText = "✔️";
         Comprobaciones.eventName=true;
         checkInputs();
@@ -222,7 +150,7 @@ let checkEventName = () => {
         checkInputs();
     }
     else{
-        lblEventName.innerText = "❌¡Introduce un nombre de evento menor a 15 digitos!❌";
+        lblEventName.innerText = "❌¡Introduce un nombre de evento menor a 31 digitos!❌";
         Comprobaciones.eventName=false;
         checkInputs();
     }
@@ -230,7 +158,7 @@ let checkEventName = () => {
 
 let checkTema = () => {
     let textTema = txtTema.value;
-    if(textTema.length<=15 && textTema.length>3){
+    if(textTema.length<=30 && textTema.length>3){
         lblTema.innerText = "✔️";
         Comprobaciones.tema=true;
         checkInputs();
@@ -240,7 +168,7 @@ let checkTema = () => {
         checkInputs();
     }
     else{
-        lblTema.innerText = "❌¡Introduce un nombre de evento menor a 15 digitos!❌";
+        lblTema.innerText = "❌¡Introduce un nombre de evento menor a 31 digitos!❌";
         Comprobaciones.tema=false;
         checkInputs();
     }
@@ -308,3 +236,84 @@ let checkFin = () => {
         checkInputs();
     }
 };
+
+window.addEventListener("load", () =>{
+    
+    divCoordenadas.style.display = "none";
+    divVideomeeting.style.display = "none";
+
+    if (radioCoordinates.checked) divCoordenadas.style.display = "block";
+    else if (radioVideomeeting.checked)divVideomeeting.style.display = "block";
+
+    if (radioCoordinates.checked) {
+        txtVideomeeting.value = "";
+        Comprobaciones.coordenadas = false;
+        Comprobaciones.videomeeting = false;
+        checkRadioCoor();
+    }else{
+        txtCoordenadas.value = "";
+        Comprobaciones.coordenadas = false;
+        Comprobaciones.videomeeting = false;
+        checkRadioMeeting();
+    }
+
+    checkUserOwner();
+    if(lblUserSummoner!=null) checkUserSummoner();
+    checkEventName();
+    checkTema();
+    checkInicio();
+    checkFin();
+});
+
+radioCoordinates.addEventListener("click", () =>{
+    divVideomeeting.style.display = "none";
+    divCoordenadas.style.display = "block";
+    txtVideomeeting.value = "";
+    Comprobaciones.coordenadas = false;
+    Comprobaciones.videomeeting = false;
+    checkRadioCoor();
+});
+
+radioVideomeeting.addEventListener("click", () =>{
+    divVideomeeting.style.display = "block";
+    divCoordenadas.style.display = "none";
+    txtCoordenadas.value = "";
+    Comprobaciones.coordenadas = false;
+    Comprobaciones.videomeeting = false;
+    checkRadioMeeting();
+});
+
+txtUserOwner.addEventListener("change", () =>{
+    checkUserOwner();
+});
+
+if(lblUserSummoner!=null) {
+    txtUserSummoner.addEventListener("change", () =>{
+    checkUserSummoner();
+    });
+}
+
+txtEventName.addEventListener("change", () =>{
+    checkEventName();
+});
+
+txtTema.addEventListener("change", () =>{
+    checkTema();
+});
+
+txtInicio.addEventListener("change", () =>{
+    checkInicio();
+});
+
+txtFin.addEventListener("change", () =>{
+    checkFin();
+});
+
+txtCoordenadas.addEventListener("change", () =>{
+    checkRadioCoor();
+});
+
+txtVideomeeting.addEventListener("change", () =>{
+    checkRadioMeeting();
+});
+
