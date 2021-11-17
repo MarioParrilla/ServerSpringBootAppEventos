@@ -139,7 +139,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <label for="userowner">ID Usuario Dueño</label><span id="lblUserOwner"></span>
                       <input type="number" name="userowner" class="form-control" id="userowner" placeholder="ID Usuario Dueño" th:value="${evento.getUserOwner().getUserID()}"  readonly>
                     </div>
-                    <div class="form-group" th:if="${evento.getAvailable == true}">
+                    <div class="form-group" th:if="${evento.getAvailable == false}">
                       <label for="usersummoner">ID Usuario Citador</label><span id="lblUserSummoner"></span>
                       <input type="number" name="usersummoner" class="form-control" id="usersummoner" placeholder="ID Usuario Citador" th:value="${evento.getUserSummoner().getUserID()}" readonly>
                     </div>
