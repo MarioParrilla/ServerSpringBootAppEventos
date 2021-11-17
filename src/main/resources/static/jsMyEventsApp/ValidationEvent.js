@@ -190,6 +190,7 @@ let checkUserOwner = () => {
 
 let checkUserSummoner = () => {
     let usrSummoner = txtUserSummoner.value;
+    let usrOwner = txtUserOwner.value;
     if(usrSummoner.length<20 && usrSummoner.length>0){
         lblUserSummoner.innerText = "✔️";
         Comprobaciones.userSummoner=true;
@@ -198,6 +199,9 @@ let checkUserSummoner = () => {
         lblUserSummoner.innerText = "❌¡Introduce un ID!❌";
         Comprobaciones.userSummoner=false;
         checkInputs();
+    }else if(usrSummoner===usrOwner){
+        lblUserSummoner.innerText = "❌¡Introduce un ID diferente al dueño!❌";
+        Comprobaciones.userSummoner=false;
     }
     else{
         lblUserSummoner.innerText = "❌¡Introduce un ID menor a 20 digitos!❌";

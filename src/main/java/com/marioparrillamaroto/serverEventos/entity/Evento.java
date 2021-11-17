@@ -23,10 +23,10 @@ public class Evento implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long eventID;
 	
-	@Column(nullable = false, length = 15)
+	@Column(nullable = false, length = 30)
 	private String eventName;
 	
-	@Column(nullable = false, length = 15)
+	@Column(nullable = false, length = 30)
 	private String tema;
 
 	@Column(nullable = false)
