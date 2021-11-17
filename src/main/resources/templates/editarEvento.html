@@ -139,11 +139,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <label for="userowner">ID Usuario Dueño</label><span id="lblUserOwner"></span>
                       <input type="number" name="userowner" class="form-control" id="userowner" placeholder="ID Usuario Dueño" th:value="${evento.getUserOwner().getUserID()}"  readonly>
                     </div>
-                    <div class="form-group" th:if="${evento.getUserSummoner().getUserID() == null}">
+                    <div class="form-group" th:if="${evento.getAvailable == false}">
                       <label for="usersummoner">ID Usuario Citador</label><span id="lblUserSummoner"></span>
                       <input type="number" name="usersummoner" class="form-control" id="usersummoner" placeholder="ID Usuario Citador">
                     </div>
-                    <div class="form-group" th:unless="${evento.getUserSummoner().getUserID() == null}">
+                    <div class="form-group" th:unless="${{evento.getAvailable == false}">
                       <label for="usersummoner">ID Usuario Citador</label><span id="lblUserSummoner"></span>
                       <input type="number" name="usersummoner" class="form-control" id="usersummoner" placeholder="ID Usuario Citador" th:value="${evento.getUserSummoner().getUserID()}" readonly>
                     </div>
@@ -181,10 +181,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       Presencial<input type="radio" name="eventpreference" class="form-control" value="false" id="eventpreferencecoordinates" checked/><hr>
                       Videomeeting<input type="radio" name="eventpreference" class="form-control" value="true" id="eventpreferencevideomeeting"/><hr>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" th:if="${evento.getAvailable() == true}">
                       <label for="enabled">Habilitado</label><br><hr>
                       Si<input type="radio" name="enabled" class="form-control" value="true" id="enabledTrue" checked/><hr>
                       No<input type="radio" name="enabled" class="form-control" value="false" id="enabledFalse"/><hr>
+                    </div>
+                    <div class="form-group" th:unless="${evento.getAvailable() == true}">
+                      <label for="enabled">Habilitado</label><br><hr>
+                      Si<input type="radio" name="enabled" class="form-control" value="true" id="enabledTrue"/><hr>
+                      No<input type="radio" name="enabled" class="form-control" value="false" id="enabledFalse" checked/><hr>
                     </div>
                   </div>
                 <!-- /.card-body -->
