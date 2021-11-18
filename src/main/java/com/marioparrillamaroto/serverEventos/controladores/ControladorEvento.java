@@ -86,17 +86,30 @@ public class ControladorEvento {
 
 		try {
 			Evento event = new Evento();
-			event.setEventID(eventid);
-			event.setEventName(eventname);
-			event.setTema(tema);
-			event.setStartTime(startTime);
-			event.setEndTime(endTime);
-			event.setAvailable(available);
-			event.setEventPreference(eventPreference);
-			event.setCoordinates(coordinates);
-			event.setVideomeeting(videomeeting);
-			event.setUserOwner(userRepository.findById(userOwner).orElseThrow(() ->  new IllegalArgumentException("Usuario owner no encontrado")));
-			event.setUserSummoner(userRepository.findById(userSummoner).orElseThrow(() -> new IllegalArgumentException("Usuario summoner no encontrado")));
+			if(userSummoner==0){
+				event.setEventID(eventid);
+				event.setEventName(eventname);
+				event.setTema(tema);
+				event.setStartTime(startTime);
+				event.setEndTime(endTime);
+				event.setAvailable(available);
+				event.setEventPreference(eventPreference);
+				event.setCoordinates(coordinates);
+				event.setVideomeeting(videomeeting);
+				event.setUserOwner(userRepository.findById(userOwner).orElseThrow(() ->  new IllegalArgumentException("Usuario owner no encontrado")));
+			}else{
+				event.setEventID(eventid);
+				event.setEventName(eventname);
+				event.setTema(tema);
+				event.setStartTime(startTime);
+				event.setEndTime(endTime);
+				event.setAvailable(available);
+				event.setEventPreference(eventPreference);
+				event.setCoordinates(coordinates);
+				event.setVideomeeting(videomeeting);
+				event.setUserOwner(userRepository.findById(userOwner).orElseThrow(() ->  new IllegalArgumentException("Usuario owner no encontrado")));
+				event.setUserSummoner(userRepository.findById(userSummoner).orElseThrow(() -> new IllegalArgumentException("Usuario summoner no encontrado")));
+			}
 			
 			eventRepository.save(event);
 			model.addAttribute("msgError", new InfoMessage("➕¡El evento se agregó correctamente!", 0));
