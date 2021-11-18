@@ -52,11 +52,7 @@ let checkInputs = () => {
 };
 
 btnSubmit.disabled = true;
-btnSubmit.addEventListener("click", () =>{
-    if(lblUserSummoner==null){
-        document.getElementById("formEditarEvento").insertAdjacentHTML("beforeend","<input type='number' name='usersummoner' class='form-control' id='usersummoner' placeholder='ID Usuario Citador' th:value=0>");
-    }
-});
+
 
 
 let checkRadioCoor = () => {

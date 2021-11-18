@@ -143,6 +143,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <label for="usersummoner">ID Usuario Citador</label><span id="lblUserSummoner"></span>
                       <input type="number" name="usersummoner" class="form-control" id="usersummoner" placeholder="ID Usuario Citador" th:value="${evento.getUserSummoner().getUserID()}" readonly>
                     </div>
+                    <div class="form-group" th:unless="${evento.getAvailable == false}">
+                      <label for="usersummoner">ID Usuario Citador</label><span id="lblUserSummoner"></span>
+                      <input type="number" name="usersummoner" class="form-control" id="usersummoner" placeholder="ID Usuario Citador" th:value=0 readonly>
+                    </div>
                     <div class="form-group">
                       <label for="eventname">Nombre Evento</label><span id="lblEventName"></span>
                       <input type="text" name="eventname" class="form-control" id="eventname" placeholder="Nombre Evento" th:value="${evento.getEventName()}">
