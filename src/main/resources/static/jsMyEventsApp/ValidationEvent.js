@@ -43,10 +43,9 @@ let Comprobaciones = {
     videomeeting: false,
 };
 
-if(lblUserSummoner!=null) Comprobaciones.userSummoner = true;
+if(lblUserSummoner==null) Comprobaciones.userSummoner = true;
 
 let checkInputs = () => {
-    if(lblUserSummoner!=null) Comprobaciones.userSummoner = true;
     if (Comprobaciones.userOwner===true && Comprobaciones.userSummoner===true && Comprobaciones.eventName===true && Comprobaciones.tema===true && Comprobaciones.inicio===true
         && Comprobaciones.fin===true && Comprobaciones.coordenadas===true && Comprobaciones.videomeeting===true) btnSubmit.disabled = false;
     else btnSubmit.disabled = true;
