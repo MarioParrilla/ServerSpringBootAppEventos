@@ -1,6 +1,5 @@
 package com.marioparrillamaroto.serverEventos.controladores;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ArrayList;
@@ -12,7 +11,6 @@ import com.marioparrillamaroto.serverEventos.repository.EventRepository;
 import com.marioparrillamaroto.serverEventos.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -79,6 +77,12 @@ public class ControladorIndexFull {
 
 		model.addAttribute("estadisticasEventosHoy", eventos);
 		return "index";
+	}
+
+	
+	@GetMapping("/")
+	public String redirectToMenu(){
+		return "redirect:/menu";
 	}
 
 	@GetMapping("/cerrarSesion")
