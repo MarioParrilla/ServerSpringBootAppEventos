@@ -203,7 +203,50 @@ Esta página se mostrará cuando ocurra cualquier error con la página.
 
 ## Diagrama de clases
 
-![diagramaClases](./readmeAssets/Diagramas/clases.png)
+![diagramaPaqueteMain](./readmeAssets/Diagramas/diagramaPaqueteMain.png)
+
+Clase ServerEventosApplication: Esta clase contiene el main del spring boot.
+
+![diagramaPaqueteEntity](./readmeAssets/Diagramas/diagramaPaqueteEntity.png)
+
+Clase InfoMensaje: Esta clase se utliza para guardar información de mensajes que se quieran mostrar en el CMS como comunicar algun error.
+
+Clase Evento: Esta clase almacena la información de cada evento que haya en nuestro CMS.
+
+Clase Usuario: Esta clase almacena la información de cada usuario del CMS.
+
+![diagramaPaqueteControladores](./readmeAssets/Diagramas/diagramaPaqueteControladores.png)
+
+Clase ControladorIndex: Esta clase es el controlador principal, el cual responde a las llamadas a /login.
+
+Clase ControladorError: Esta clase, responde a las llamadas a /error para mostrar paginas de errores.
+
+Clase ControladorIndexFull: Esta clase es el controlador donde se maneja las llamadas al menu principal, a cerrar sesion y a soporte.
+
+Clase ControladorUsuario: Esta clase es el controlador donde realizaremos el CRUD para los usuarios desde el CMS.
+
+Clase ControladorUsuarioAPI: Esta clase es el controlador donde la aplicación movil realizará las llamadas para realizar el CRUD de los usuarios.
+
+Clase ControladorEventos: Esta clase es el controlador donde realizaremos el CRUD para los eventos desde el CMS.
+
+Clase ControladorControladorEventosAPI: Esta clase es el controlador donde la aplicación movil realizará las llamadas para realizar el CRUD de los eventos.
+
+
+![diagramaPaqueteRepository](./readmeAssets/Diagramas/diagramaPaqueteRepository.png)
+
+Clase EventRepository: Esta clase extiende de JpaRepository la cual tiene funciones para realizar las querys para los eventos.
+
+Clase UserRepository: Esta clase extiende de JpaRepository la cual tiene funciones para realizar las querys para los usuarios.
+
+![diagramaPaqueteSecurity](./readmeAssets/Diagramas/diagramaPaqueteSecurity.png)
+
+Clase SecurityConfig: Esta clase es la que se encarga de manejar el acceso a los recursos de nuestro CMS y de encriptar las contraseñas de los usuarios.
+
+![diagramaPaqueteServices](./readmeAssets/Diagramas/diagramaPaqueteServices.png)
+
+DetallesUsuariosService: Esta clase se encarga de ver el rol de los usuarios para permitir accesos o no en el CMS.
+
+JWTService: Esta clase es la que se encarga de verificar los tokens que limitan el acceso a nuestras API's del CMS.
 
 ## Diagrama E/R
 
