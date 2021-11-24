@@ -323,7 +323,19 @@ Base de datos: La base de datos esta hosteada en amazon ya que se utiliza un plu
 
 ## Entorno de desarrollo, librerías y servicios
 
-En este punto se explicarán las diferentes tecnologías utilizadas para la realización del proyecto, así como los elementos más importantes que permitan entender el funcionamiento del sistema.
+Spring-Boot: Este es el framework que he utilizado para desarrollar el cms, el cual permite crear facilmente un servidor web.
+
+Thymeleaf: Es el motor de plantillas java que he utilizado para renderizar mi html y que sea dinamico con los datos del cms.
+
+JWT: Esta es la tecnologia que he utlizado para realizar un api rest seguro y con uso limitado a mi aplicación android. Se trata de un web token encriptado.
+
+Base de datos: Se utliza una base de datos relacional, MySQL.
+
+Hibernate: Spring-boot, permite la generación de base de datos relacionales con JPA, a traves de esta tecnologia.
+
+Spring-Boot Security: Es parte de spring-boot, y nos permite limitar el uso de los recursos de nuestro CMS según como lo configuemos entre otras muchas cosas.
+
+BCrypt: Esta es la tecnologia que utiliza Spring boot security para poder encriptar las contraseñas de los usuarios para hacer la plataforma más segura.
 
 ## Instrucciones para la compilación, ejecución y despliegue de la aplicación
 
