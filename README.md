@@ -302,11 +302,19 @@ Prueba 2: Comprobar usuario agregado: Se pasará un objeto usuario y si el usuar
 
 ## Diagrama de paquetes y de componentes
 
-Se debe incluir un diagrama de paquetes, de componentes, etc.
+![diagramaPaquetes](./readmeAssets/Diagramas/diagramaPaquetes.png)
 
-También se puede incluir la estructura y descripción de los ficheros que forman parte del proyecto. Descripción 
+Paquete Controladores: En este paquete se almacenan las clases que se encargan del redericcionar a las vistas segun se solicite.
 
-de algoritmos, etc.
+Paquete Entity: En este paquete se almacenan las clases de los objetos que almacenamos en la bd y otros objetos.
+
+Paquete Repository: En este paquete se almacenan las clases que se encargan de realizar las querys.
+
+Paquete services: En este paquete se almacenan las clases donde almacenamos funcionalidades complejas como la logica de JWT.
+
+Paquete security: En este paquete se almacenan las clases se encargan de mantener el CMS seguro.
+
+Paquete resources: En este paquete se almacena los recursos como las vistas html y archivos estaticos como css, js o imagenes.
 
 ## Arquitectura del sistema
 
