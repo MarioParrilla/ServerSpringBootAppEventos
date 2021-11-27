@@ -270,7 +270,9 @@ enabled: Nos servirá para saber si el usuario puede utilizarse o no, que es de 
 
 eventID: Es la clave principal de la tabla, que será el identificador del evento, que es de tipo bigint. NotNull.
 
-username: Es el nombre de evento, que es de tipo varchar. NotNull.
+eventname: Es el nombre de evento, que es de tipo varchar. NotNull.
+
+eventname: Es el tema del evento, que es de tipo varchar. NotNull.
 
 start_time: Es la fecha y hora del inicio del evento, que es de tipo Datetime. NotNull.
 
