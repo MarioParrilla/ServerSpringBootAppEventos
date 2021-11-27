@@ -151,11 +151,6 @@ Dispositivos: se podrá usar desde cualquier dispositivo con un navegador web
 
 ## Interfaz gráfico
 
-Página Inicio Sin Logearse:
-En esta pagina se podrá ver el inicio y ir a la pagina de login.
-
-![inicioNoLogin](./readmeAssets/DisennoGrafico/inicioNoLogin.png)
-
 Página Login:
 En esta pagina podremos logearnos con nuestro usuario admin y guardar sesion.
 
