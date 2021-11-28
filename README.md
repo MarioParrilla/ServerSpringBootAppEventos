@@ -344,8 +344,7 @@ BCrypt: Esta es la tecnologia que utiliza Spring boot security para poder encrip
 
 ## Instrucciones para la compilación, ejecución y despliegue de la aplicación
 
-Describe los pasos a seguir para poder compilar el proyecto y ejecutarlo.
-
+Se deberá tener java 1.8 en el dispositivo además de conexion a internet.
 
 
 # Informe de pruebas
@@ -360,6 +359,13 @@ Describe el resultado de ejecutar los casos de prueba sobre la aplicación web y
 
 Reflexiona sobre el trabajo realizado durante el desarrollo de la aplicación web y sobre los conocimientos adquiridos, problemas encontrados, etc.
 
+Gracias a este trabajo he aprendido a como utilizar el framework spring boot y crear con este un CMS con sus respectivos controladores, su respectivdad seguridad, ademas se aprender a crear una api y como funciona. Ademas, he aprendido a utilizar los tokens web como JWT. También, he aprendido en que consiste un ORM como hibernate y como gracias a este podemos crear base de datos relacionales con instrucciones JPA.
+En el desarrollo del CMS no me he encontrado ningún error que me haya complicado el desarrollo.
+
+En conclusión, gracias a esta practica, he aprendido muchos conceptos a la hora de crear un CMS y sus funciones y a empezar a entender el desarrollo con el framework spring  boot.
+
 ## Mejoras futuras
 
-Incluye aspectos y nueva funcionalidad que incluirías en el CMS en un futuro próximo. 
+- Mejorar visualmente en algunos aspectos.
+
+- Añadir más graficos.
