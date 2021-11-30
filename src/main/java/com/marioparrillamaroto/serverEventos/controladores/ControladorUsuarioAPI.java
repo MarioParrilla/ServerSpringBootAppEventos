@@ -42,7 +42,7 @@ public class ControladorUsuarioAPI {
 				throw new Exception("Acceso denegado, no tienes permiso");
 			}
 		} catch (Exception e) {
-			return new ResponseEntity( e.getMessage(), HttpStatus.FORBIDDEN);
+			return new ResponseEntity( e.getMessage(), HttpStatus.OK);
 		}
 	}
 	

@@ -344,14 +344,17 @@ BCrypt: Esta es la tecnologia que utiliza Spring boot security para poder encrip
 
 ## Instrucciones para la compilación, ejecución y despliegue de la aplicación
 
-Se deberá tener java 1.8 en el dispositivo además de conexion a internet.
+Se deberá tener java 1.8 en el dispositivo además de conexion a internet, ademas de maven y spring boot.
 
+Puedes cambiar la direccion de la base de datos en:
+
+![propBD](./readmeAssets/propBD.png)
 
 # Informe de pruebas
 
 Describe el resultado de ejecutar los casos de prueba sobre la aplicación web y del API REST.
 
-
+VIDEO
 
 # Conclusiones
 
