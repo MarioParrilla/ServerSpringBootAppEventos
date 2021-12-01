@@ -315,7 +315,6 @@ Paquete resources: En este paquete se almacena los recursos como las vistas html
 
 ## Arquitectura del sistema
 
-
 ![diagramaDespliegue](./readmeAssets/Diagramas/diagramaDespliegue.png)
 
 CMS:  El CMS esta desplegado en la plataforma de Heroku. Este CMS esta desarrollado con Spring boot.
