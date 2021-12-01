@@ -352,7 +352,7 @@ Puedes cambiar la direccion de la base de datos en:
 # Informe de pruebas
 
 <figure class="video_container">
-    <iframe src="https://www.youtube.com/embed/B3BruBbosVo"></iframe>
+    <a href="https://youtu.be/B3BruBbosVo">Video</a>
 </figure>
 
 # Conclusiones
