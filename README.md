@@ -343,6 +343,9 @@ BCrypt: Esta es la tecnologia que utiliza Spring boot security para poder encrip
 
 ## Instrucciones para la compilación, ejecución y despliegue de la aplicación
 
+Para poder acceder al cms debes usar el ususario rogelio (en minusculas) con la contraseña admin
+
+
 Se deberá tener java 1.8 en el dispositivo además de conexion a internet, ademas de maven y spring boot.
 
 Puedes cambiar la direccion de la base de datos en:
