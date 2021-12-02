@@ -291,9 +291,9 @@ user_summoner_id_user: es la id del usuario que ha citado al creador el evento, 
 
 Prueba 1: Comprobar Existencia del un Usuario en el login: Se pasaran como parametros un usuario y una contraseña y si el usuario existe, nos devolverá un true, si no, nos devolverá false.
 
-Prueba 2: Comprobar usuario agregado: Se pasará un objeto usuario y si el usuario se agrega correctamente, nos devolverá un true, si no, nos devolverá un flase.
+Prueba 2: Comprobar usuario agregado: Se pasará un objeto usuario y si el usuario se agrega correctamente, nos devolverá un true, si no, nos devolverá un false.
 
-🏗️⚠️PLAN DE PRUEBAS EN DESARROLLO⚠️🏗️
+Prueba3: Se comprobará si un evento se agrega correctamente, si se agrega, nos devolverá true, si no devolverá un false.
 
 # Diseño Técnico
 
