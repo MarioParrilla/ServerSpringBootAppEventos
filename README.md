@@ -45,52 +45,52 @@ Diagrama Casos de Uso:
 Página Inicio Sin Logearse:
 En esta pagina se podrá ver el inicio y ir a la pagina de login.
 
-![inicioNoLogin](./readmeAssets/wireframe/inicioNoLogin.png)
+![inicioNoLogin](./readmeAssets/Wireframe/inicioNoLogin.png)
 
 Página Login:
 En esta pagina podremos logearnos con nuestro usuario admin y guardar sesion.
 
-![login](./readmeAssets/wireframe/login.png)
+![login](./readmeAssets/Wireframe/login.png)
 
 Página Inicio Con Login:
 Una vez logeados, podremos ver más opciones como usuarios, eventos y cerrar sesion.
 
-![inicioLogin](./readmeAssets/wireframe/inicioLogin.png)
+![inicioLogin](./readmeAssets/Wireframe/inicioLogin.png)
 
 Página Usuarios:
 No mostrará una tabla donde podremos ver la información de los usuarios y las acciones como añadir, editar y eliminar usuarios.
 
-![usuarios](./readmeAssets/wireframe/usuarios.png)
+![usuarios](./readmeAssets/Wireframe/usuarios.png)
 
 Página Agregar Usuario:
 En esta página podremos agregar un nuevo usuario incluyendo su información.
 
-![agregarUsuario](./readmeAssets/wireframe/agregarUsuario.png)
+![agregarUsuario](./readmeAssets/Wireframe/agregarUsuario.png)
 
 Página Modificar Usuario:
 En esta página, podremos editar la información del usuario.
 
-![editarUsuario](./readmeAssets/wireframe/editarUsuario.png)
+![editarUsuario](./readmeAssets/Wireframe/editarUsuario.png)
 
 Página Eventos:
 No mostrará una tabla donde podremos ver la información de los eventos y las acciones como añadir, editar y eliminar eventos.
 
-![eventos](./readmeAssets/wireframe/eventos.png)
+![eventos](./readmeAssets/Wireframe/eventos.png)
 
 Página Agregar Evento:
 En esta página podremos agregar un nuevo evento incluyendo su información.
 
-![agregarEvento](./readmeAssets/wireframe/agregarEvento.png)
+![agregarEvento](./readmeAssets/Wireframe/agregarEvento.png)
 
 Página Modificar Evento:
 En esta página, podremos editar la información del evento.
 
-![editarEvento](./readmeAssets/wireframe/editarEvento.png)
+![editarEvento](./readmeAssets/Wireframe/editarEvento.png)
 
 Página Errores:
 Esta página se mostrará cuando ocurra cualquier error con la página.
 
-![error](./readmeAssets/wireframe/error.png)
+![error](./readmeAssets/Wireframe/error.png)
 
 ## API REST
 
