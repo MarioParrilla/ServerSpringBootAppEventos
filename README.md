@@ -154,47 +154,47 @@ Dispositivos: se podrá usar desde cualquier dispositivo con un navegador web
 Página Login:
 En esta pagina podremos logearnos con nuestro usuario admin y guardar sesion.
 
-![login](./readmeAssets/DisennoGrafico/login.png)
+![login](./readmeAssets/disennoGrafico/login.png)
 
 Página Inicio Con Login:
 Una vez logeados, podremos ver más opciones como usuarios, eventos y cerrar sesion.
 
-![inicioLogin](./readmeAssets/DisennoGrafico/inicioLogin.png)
+![inicioLogin](./readmeAssets/disennoGrafico/inicioLogin.png)
 
 Página Usuarios:
 No mostrará una tabla donde podremos ver la información de los usuarios y las acciones como añadir, editar y eliminar usuarios.
 
-![usuarios](./readmeAssets/DisennoGrafico/usuarios.png)
+![usuarios](./readmeAssets/disennoGrafico/usuarios.png)
 
 Página Agregar Usuario:
 En esta página podremos agregar un nuevo usuario incluyendo su información.
 
-![agregarUsuario](./readmeAssets/DisennoGrafico/agregarUsuario.png)
+![agregarUsuario](./readmeAssets/disennoGrafico/agregarUsuario.png)
 
 Página Modificar Usuario:
 En esta página, podremos editar la información del usuario.
 
-![editarUsuario](./readmeAssets/DisennoGrafico/editarUsuario.png)
+![editarUsuario](./readmeAssets/disennoGrafico/editarUsuario.png)
 
 Página Eventos:
 No mostrará una tabla donde podremos ver la información de los eventos y las acciones como añadir, editar y eliminar eventos.
 
-![eventos](./readmeAssets/DisennoGrafico/eventos.png)
+![eventos](./readmeAssets/disennoGrafico/eventos.png)
 
 Página Agregar Evento:
 En esta página podremos agregar un nuevo evento incluyendo su información.
 
-![agregarEvento](./readmeAssets/DisennoGrafico/agregarEvento.png)
+![agregarEvento](./readmeAssets/disennoGrafico/agregarEvento.png)
 
 Página Modificar Evento:
 En esta página, podremos editar la información del evento.
 
-![editarEvento](./readmeAssets/DisennoGrafico/editarEvento.png)
+![editarEvento](./readmeAssets/disennoGrafico/editarEvento.png)
 
 Página Errores:
 Esta página se mostrará cuando ocurra cualquier error con la página.
 
-![error](./readmeAssets/DisennoGrafico/error.png)
+![error](./readmeAssets/disennoGrafico/error.png)
 
 ## Diagrama de clases
 
